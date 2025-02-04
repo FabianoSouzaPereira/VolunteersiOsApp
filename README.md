@@ -1,4 +1,4 @@
-App
+``` App
 │── DI
 │   ├── AppModule.swift       // Módulos globais da DI para a aplicação inteira (ex.: CoreData, Alamofire, etc)
 │   ├── NetworkModule.swift   // Configuração de rede e repositórios globais
@@ -97,3 +97,4 @@ App
 ├── AppDelegate.swift    // Classe principal da aplicação (UIApplicationDelegate)
 ├── SceneDelegate.swift  // Gerencia a configuração da cena principal (caso use UIKit)
 ├── Main.swift           // Entry point da aplicação (caso use SwiftUI)
+```

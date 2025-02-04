@@ -91,6 +91,7 @@ App
 │   ├── UI
 │       ├── Components   // Componentes reutilizáveis de UI (ex: botões, inputs)
 │       ├── Themes       // Definição de temas e estilos globais
+
 │       ├── Navigation   // Gerenciamento de navegação entre telas
 │
 ├── AppDelegate.swift    // Classe principal da aplicação (UIApplicationDelegate)

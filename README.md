@@ -1,4 +1,5 @@
-``` App
+```
+App
 │── DI
 │   ├── AppModule.swift       // Módulos globais da DI para a aplicação inteira (ex.: CoreData, Alamofire, etc)
 │   ├── NetworkModule.swift   // Configuração de rede e repositórios globais

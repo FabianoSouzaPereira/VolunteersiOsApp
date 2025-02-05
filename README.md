@@ -1,3 +1,10 @@
+## Diferenças e Ajustes para Swift
+
+O Swift usa DAO geralmente via CoreData, então a camada Persistence foi nomeada para refletir isso.
+Use Cases são comuns em arquiteturas limpas no Swift.
+Repositories seguem a mesma lógica, separando interfaces do domínio e implementações na camada de dados.
+A camada de UI foi separada por Screens e Components, o que ajuda na reutilização de elementos visuais no SwiftUI.
+A injeção de dependências pode ser feita com SwiftDependencyInjection frameworks ou manualmente usando @StateObject e @EnvironmentObject.
 ```
 App
 │── DI

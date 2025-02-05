@@ -9,73 +9,28 @@ A injeção de dependências pode ser feita com SwiftDependencyInjection framewo
 ``` 
 App
 │── DI
-│   ├── AppModule.swift       // Módulos globais da DI para a aplicação inteira (ex.: CoreData, Alamofire, etc.)
+│   ├── AppModule.swift       // Módulos globais de injeção de dependências
 │   ├── NetworkModule.swift   // Configuração de rede e repositórios globais
 │
 ├── Core
 │   ├── DI
-│   │   ├── CoreModule.swift  // Módulo de DI de Core (ex.: UserDefaults, serviços globais)
+│   │   ├── CoreModule.swift  // Configurações globais (ex.: UserDefaults, serviços globais)
 │   ├── Extensions            // Extensões auxiliares para reutilização de código
 │   ├── Utils                 // Utilitários e helpers globais
 │
 ├── Data
 │   ├── API
-│   │   ├── UserService.swift      // Comunicação com a API para usuários
-│   │   ├── LoginService.swift     // Comunicação com a API para login
-│   │   ├── ProfileService.swift   // Comunicação com a API para perfis
-│   │
 │   ├── Persistence
-│   │   ├── UserStorage.swift      // Persistência de dados de usuários (CoreData, FileManager, UserDefaults)
-│   │   ├── LoginStorage.swift     // Persistência de dados de login
-│   │   ├── ProfileStorage.swift   // Persistência de perfis
-│   │
-│   ├── DI
-│   │   ├── DataModule.swift       // DI de dependências de Data (ex.: Repositórios, DataSources)
-│   │
 │   ├── Models
-│   │   ├── User.swift             // Modelo de dados (POJOs, DTOs)
-│   │   ├── Login.swift
-│   │   ├── Profile.swift
-│   │
 │   ├── Repositories
-│   │   ├── UserRepositoryImpl.swift   // Implementação da interface definida no domínio
-│   │   ├── LoginRepositoryImpl.swift
-│   │   ├── ProfileRepositoryImpl.swift
-│   │
 │   ├── DataSources
-│       ├── Remote
-│       │   ├── UserRemoteDataSource.swift
-│       │   ├── LoginRemoteDataSource.swift
-│       │   ├── ProfileRemoteDataSource.swift
-│       │
-│       ├── Local
-│       │   ├── UserLocalDataSource.swift
-│       │   ├── LoginLocalDataSource.swift
-│       │   ├── ProfileLocalDataSource.swift
 │
 ├── Domain
-│   ├── DI
-│   │   ├── DomainModule.swift // DI de dependências do domínio (UseCases, Repositórios)
-│   │
 │   ├── Entities
-│   │   ├── UserEntity.swift
-│   │   ├── LoginEntity.swift
-│   │   ├── ProfileEntity.swift
-│   │
 │   ├── Repositories
-│   │   ├── UserRepository.swift   // Interfaces de repositórios
-│   │   ├── LoginRepository.swift
-│   │   ├── ProfileRepository.swift
-│   │
 │   ├── UseCases
-│       ├── GetUserUseCase.swift
-│       ├── LoginUseCase.swift
-│       ├── GetProfileUseCase.swift
 │
 ├── Presentation
-│   ├── DI
-│   │   ├── PresentationModule.swift // DI de dependências da camada de UI (ViewModels, Providers)
-│   │
 │   ├── Screens
 │   │   ├── Home
 │   │   │   ├── HomeView.swift
@@ -92,17 +47,11 @@ App
 │   │       ├── SettingsViewModel.swift
 │   │       ├── SettingsState.swift
 │   │
-│   ├── ViewModels
-│   │   ├── HomeViewModel.swift
-│   │   ├── LoginViewModel.swift
-│   │   ├── SettingsViewModel.swift
-│   │
-│   ├── Components   // Componentes reutilizáveis de UI (ex: botões, inputs)
+│   ├── Components   // Componentes reutilizáveis de UI (botões, inputs, etc.)
 │   ├── Themes       // Definição de temas e estilos globais
 │   ├── Navigation   // Gerenciamento de navegação entre telas
 │
-├── AppDelegate.swift    // Classe principal da aplicação (UIApplicationDelegate)
-├── SceneDelegate.swift  // Gerencia a configuração da cena principal (caso use UIKit)
-├── Main.swift           // Entry point da aplicação (caso use SwiftUI)
+├── VolunteersiOsApp.swift // Entry point do app (substitui AppDelegate)
+
 
 ```

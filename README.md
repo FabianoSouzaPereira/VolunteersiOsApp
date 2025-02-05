@@ -5,15 +5,16 @@ Use Cases são comuns em arquiteturas limpas no Swift.
 Repositories seguem a mesma lógica, separando interfaces do domínio e implementações na camada de dados.
 A camada de UI foi separada por Screens e Components, o que ajuda na reutilização de elementos visuais no SwiftUI.
 A injeção de dependências pode ser feita com SwiftDependencyInjection frameworks ou manualmente usando @StateObject e @EnvironmentObject.
-```
+
+``` 
 App
 │── DI
-│   ├── AppModule.swift       // Módulos globais da DI para a aplicação inteira (ex.: CoreData, Alamofire, etc)
+│   ├── AppModule.swift       // Módulos globais da DI para a aplicação inteira (ex.: CoreData, Alamofire, etc.)
 │   ├── NetworkModule.swift   // Configuração de rede e repositórios globais
 │
 ├── Core
 │   ├── DI
-│   │   ├── CoreModule.swift  // Módulo de DI de core (ex: UserDefaults, serviços globais)
+│   │   ├── CoreModule.swift  // Módulo de DI de Core (ex.: UserDefaults, serviços globais)
 │   ├── Extensions            // Extensões auxiliares para reutilização de código
 │   ├── Utils                 // Utilitários e helpers globais
 │
@@ -24,15 +25,15 @@ App
 │   │   ├── ProfileService.swift   // Comunicação com a API para perfis
 │   │
 │   ├── Persistence
-│   │   ├── UserDAO.swift      // DAO para acessar dados de usuários no banco local (CoreData)
-│   │   ├── LoginDAO.swift     // DAO para acessar dados de login no banco local (CoreData)
-│   │   ├── ProfileDAO.swift   // DAO para acessar dados de perfil no banco local (CoreData)
+│   │   ├── UserStorage.swift      // Persistência de dados de usuários (CoreData, FileManager, UserDefaults)
+│   │   ├── LoginStorage.swift     // Persistência de dados de login
+│   │   ├── ProfileStorage.swift   // Persistência de perfis
 │   │
 │   ├── DI
-│   │   ├── DataModule.swift   // DI de dependências de data (ex: Repositórios, DataSources)
+│   │   ├── DataModule.swift       // DI de dependências de Data (ex.: Repositórios, DataSources)
 │   │
 │   ├── Models
-│   │   ├── User.swift         // Modelo de dados (POJOs, DTOs)
+│   │   ├── User.swift             // Modelo de dados (POJOs, DTOs)
 │   │   ├── Login.swift
 │   │   ├── Profile.swift
 │   │
@@ -96,13 +97,12 @@ App
 │   │   ├── LoginViewModel.swift
 │   │   ├── SettingsViewModel.swift
 │   │
-│   ├── UI
-│       ├── Components   // Componentes reutilizáveis de UI (ex: botões, inputs)
-│       ├── Themes       // Definição de temas e estilos globais
-
-│       ├── Navigation   // Gerenciamento de navegação entre telas
+│   ├── Components   // Componentes reutilizáveis de UI (ex: botões, inputs)
+│   ├── Themes       // Definição de temas e estilos globais
+│   ├── Navigation   // Gerenciamento de navegação entre telas
 │
 ├── AppDelegate.swift    // Classe principal da aplicação (UIApplicationDelegate)
 ├── SceneDelegate.swift  // Gerencia a configuração da cena principal (caso use UIKit)
 ├── Main.swift           // Entry point da aplicação (caso use SwiftUI)
+
 ```

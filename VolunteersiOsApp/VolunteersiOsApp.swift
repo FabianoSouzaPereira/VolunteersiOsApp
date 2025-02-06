@@ -9,38 +9,27 @@ import SwiftUI
 
 @main
 struct VolunteersiOsApp: App {
-    @StateObject private var router = Router()
-    @StateObject private var authManager = AuthManager()
+    private let diContainer = AppModule.shared
 
     var body: some Scene {
         WindowGroup {
-            NavigationStack(path: $router.path) {
+            NavigationStack(path: $diContainer.resolve(Router.self).path) {
                 SplashScreenView()
-                    .environmentObject(router)
-                    .environmentObject(authManager)
+                    .environmentObject(diContainer.resolve(Router.self))
+                    .environmentObject(diContainer.resolve(AuthManager.self))
                     .navigationDestination(for: Screen.self) { screen in
                         switch screen {
                         case .splash:
                             SplashScreenView()
-                                .environmentObject(router)
-                                .environmentObject(authManager)
                         case .home:
-                            HomeView()
-                                .environmentObject(router)
-                                .environmentObject(authManager)
+                            HomeView(viewModel: diContainer.resolve(HomeViewModel.self))
                         case .login:
                             LoginView()
-                                .environmentObject(router)
-                                .environmentObject(authManager)
                         case .settings:
                             SettingsView()
-                                .environmentObject(router)
-                                .environmentObject(authManager)
                         }
                     }
             }
         }
     }
 }
-
-

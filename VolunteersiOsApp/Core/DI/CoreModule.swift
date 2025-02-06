@@ -1,8 +1,15 @@
 //
-//  CoerModule.swift
+//  CoreModule.swift
 //  VolunteersiOsApp
 //
-//  Created by Fabiano Pereira on 04/02/25.
+//  Created by Fabiano Pereira on 06/02/25.
 //
 
-import Foundation
+import Swinject
+
+class CoreModule {
+    static func register(in container: Container) {
+        container.register(Logger.self) { _ in Logger() }
+            .inObjectScope(.container)
+    }
+}

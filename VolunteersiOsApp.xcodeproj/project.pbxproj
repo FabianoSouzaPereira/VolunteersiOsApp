@@ -47,6 +47,8 @@
 		9C60EC7B2D551C8400080BA7 /*  HomeRemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC7A2D551C8400080BA7 /*  HomeRemoteDataSourceImpl.swift */; };
 		9C6204742D53E50C0068BAAB /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9C6204732D53E50C0068BAAB /* Swinject */; };
 		9C6204762D53E5120068BAAB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9C6204752D53E5120068BAAB /* Alamofire */; };
+		9CE0F86D2D5CDC2A00F834A2 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0F86C2D5CDC2A00F834A2 /* LoginEntity.swift */; };
+		9CE0F86F2D5CDC3F00F834A2 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0F86E2D5CDC3F00F834A2 /* LoginModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,8 @@
 		9C60EC762D551A5800080BA7 /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
 		9C60EC782D551A6D00080BA7 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		9C60EC7A2D551C8400080BA7 /*  HomeRemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " HomeRemoteDataSourceImpl.swift"; sourceTree = "<group>"; };
+		9CE0F86C2D5CDC2A00F834A2 /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
+		9CE0F86E2D5CDC3F00F834A2 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +361,7 @@
 		9C60EBE22D54E51E00080BA7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9CE0F86E2D5CDC3F00F834A2 /* LoginModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 		9C60EBE82D54E51E00080BA7 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				9CE0F86C2D5CDC2A00F834A2 /* LoginEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -791,8 +797,10 @@
 				9C60EC442D54E51E00080BA7 /* LoginViewModel.swift in Sources */,
 				9C60EC4D2D54E51E00080BA7 /* Router.swift in Sources */,
 				9C60EC312D54E51E00080BA7 /* HomeViewModel.swift in Sources */,
+				9CE0F86D2D5CDC2A00F834A2 /* LoginEntity.swift in Sources */,
 				9C60EC732D5518FB00080BA7 /* HomeUseCaseImpl.swift in Sources */,
 				9C60EC632D54E80900080BA7 /* SettingsModule.swift in Sources */,
+				9CE0F86F2D5CDC3F00F834A2 /* LoginModel.swift in Sources */,
 				9C60EC5D2D54E74100080BA7 /* CoreModule.swift in Sources */,
 				9C60EC6C2D55177200080BA7 /* HomeUseCase.swift in Sources */,
 				9C60EC5F2D54E77600080BA7 /* DataModule.swift in Sources */,

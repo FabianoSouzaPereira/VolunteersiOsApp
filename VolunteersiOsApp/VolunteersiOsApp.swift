@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct VolunteersiOsApp: App {
     private let diContainer = AppModule.shared
+    @StateObject private var router = AppModule.shared.resolve(Router.self)
 
     var body: some Scene {
         WindowGroup {
-            NavigationStack(path: $diContainer.resolve(Router.self).path) {
+            NavigationStack(path: $router.path) {
                 SplashScreenView()
                     .environmentObject(diContainer.resolve(Router.self))
                     .environmentObject(diContainer.resolve(AuthManager.self))
@@ -24,7 +25,7 @@ struct VolunteersiOsApp: App {
                         case .home:
                             HomeView(viewModel: diContainer.resolve(HomeViewModel.self))
                         case .login:
-                            LoginView()
+                            LoginView(viewModel: diContainer.resolve(LoginViewModel.self))
                         case .settings:
                             SettingsView()
                         }

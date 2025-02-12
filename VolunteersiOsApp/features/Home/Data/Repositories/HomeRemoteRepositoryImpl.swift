@@ -14,7 +14,14 @@ final class HomeRemoteRepositoryImpl: HomeRemoteRepository {
 
     func getHomeData() async throws -> [HomeEntity] {
         let models = try await remoteDataSource.fetchHomeData()
-        return models.map { HomeEntity(id: $0.id, title: $0.title, description: $0.description) }
+        return models.map {
+            HomeEntity(
+                id: $0.id,
+                username: $0.username,
+                lastLogin: $0.lastLogin,
+                notifications: $0.notifications
+            )
+        }
     }
 }
 

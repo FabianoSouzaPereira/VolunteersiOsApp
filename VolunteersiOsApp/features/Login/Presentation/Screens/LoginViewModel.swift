@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+class LoginViewModel: ObservableObject {
+    @Published var state: LoginState = .initial
+    
+}

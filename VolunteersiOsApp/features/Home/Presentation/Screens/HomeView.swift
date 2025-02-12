@@ -13,11 +13,6 @@ struct HomeView: View {
     @EnvironmentObject var router: Router
     @EnvironmentObject var authManager: AuthManager
     
-    init() {
-        let viewModel: HomeViewModel = AppModule.shared.resolve(HomeViewModel.self)
-        _viewModel = ObservedObject(wrappedValue: viewModel)
-    }
-    
     var body: some View {
         VStack {
             switch viewModel.state {

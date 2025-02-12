@@ -8,6 +8,7 @@
 import Foundation
 
 struct HomeModel: HomeEntity {
+    let id: String
     let username: String
     let lastLogin: Date
     let notifications: Int

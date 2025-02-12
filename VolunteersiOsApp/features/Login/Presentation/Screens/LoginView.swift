@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct LoginView: View {
+    @ObservedObject var viewModel: LoginViewModel
     @EnvironmentObject var router: Router
     @EnvironmentObject var authManager: AuthManager
 

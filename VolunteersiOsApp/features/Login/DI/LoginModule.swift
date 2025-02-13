@@ -13,16 +13,16 @@ class LoginModule {
             LoginRemoteDataSourceImpl()
         }.inObjectScope(.container)
         
-        container.register(LoginRepository.self) { resolver in
-            LoginRepositoryImpl(dataSource: resolver.resolve(LoginRemoteDataSource.self)!)
+        container.register(LoginRemoteRepository.self) { resolver in
+            LoginRemoteRepositoryImpl(dataSource: resolver.resolve(LoginRemoteDataSource.self)!)
         }.inObjectScope(.container)
         
-        container.register(LoginUseCase.self) { resolver in
-            LoginUseCase(repository: resolver.resolve(LoginRepository.self)!)
+        container.register(LoginRemoteUseCase.self) { resolver in
+            LoginRemoteUseCaseImpl(repository: resolver.resolve(LoginRemoteRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(LoginViewModel.self) { resolver in
-            LoginViewModel(LoginUseCase: resolver.resolve(LoginUseCase.self)!)
+            LoginViewModel(loginRemoteUseCase: resolver.resolve(LoginRemoteUseCase.self)!)
         }.inObjectScope(.transient)
     }
 }

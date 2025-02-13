@@ -6,6 +6,7 @@
 //
 
 import Swinject
+import os
 
 class CoreModule {
     static func register(in container: Container) {

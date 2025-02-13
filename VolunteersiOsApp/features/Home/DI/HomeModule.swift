@@ -18,7 +18,7 @@ class HomeModule {
         }.inObjectScope(.container)
         
         container.register(HomeUseCase.self) { resolver in
-            HomeUseCase(repository: resolver.resolve(HomeRemoteRepository.self)!)
+            HomeUseCaseImpl(repository: resolver.resolve(HomeRemoteRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(HomeViewModel.self) { resolver in

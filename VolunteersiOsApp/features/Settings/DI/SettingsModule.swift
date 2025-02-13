@@ -13,16 +13,16 @@ class SettingsModule {
             SettingsRemoteDataSourceImpl()
         }.inObjectScope(.container)
         
-        container.register(SettingsRepository.self) { resolver in
-            SettingsRepositoryImpl(dataSource: resolver.resolve(SettingsRemoteDataSource.self)!)
+        container.register(SettingsRemoteRepository.self) { resolver in
+            SettingsRemoteRepositoryImpl(dataSource: resolver.resolve(SettingsRemoteDataSource.self)!)
         }.inObjectScope(.container)
         
-        container.register(SettingsUseCase.self) { resolver in
-            SettingsUseCase(repository: resolver.resolve(SettingsRepository.self)!)
+        container.register(SettingsRemoteUseCase.self) { resolver in
+            SettingsRemoteUseCaseImpl(repository: resolver.resolve(SettingsRemoteRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(SettingsViewModel.self) { resolver in
-            SettingsViewModel(SettingsUseCase: resolver.resolve(SettingsUseCase.self)!)
+            SettingsViewModel(SettingsRemoteUseCase: resolver.resolve(SettingsRemoteUseCase.self)!)
         }.inObjectScope(.transient)
     }
 }

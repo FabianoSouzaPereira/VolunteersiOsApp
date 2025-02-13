@@ -6,3 +6,25 @@
 //
 
 import Foundation
+
+class SettingsViewModel {
+    @Published var state: SettingsState = .initial
+    private var useCase: SettingsUseCase
+    
+    init(useCase: SettingsUseCase) {
+        self.useCase = useCase
+    }
+    
+    func getSettings() async {
+        do {
+            
+            let data: [SettingsEntity] = try await useCase.getSettings()
+            state = .success(data: data)
+            
+        } catch {
+            state = .error(SettingsError(message: error.localizedDescription, retryAction: {
+                await self.getSettings()
+            }))
+        }
+    }
+}

@@ -16,6 +16,11 @@
 		9C475C8B2D52DB2000EAE3C5 /* VolunteersiOsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C475C8A2D52DB2000EAE3C5 /* VolunteersiOsAppUITestsLaunchTests.swift */; };
 		9C475CA32D52E49200EAE3C5 /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C475CA22D52E49200EAE3C5 /* AppModule.swift */; };
 		9C475CA52D52E4D100EAE3C5 /* NetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C475CA42D52E4D100EAE3C5 /* NetworkModule.swift */; };
+		9C5AF56D2D5E253F00468BEA /* SettingsRemoteUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5AF56C2D5E253E00468BEA /* SettingsRemoteUseCaseImpl.swift */; };
+		9C5AF56F2D5E260D00468BEA /* SettingsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5AF56E2D5E260D00468BEA /* SettingsEntity.swift */; };
+		9C5AF5712D5E264600468BEA /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5AF5702D5E264600468BEA /* SettingsModel.swift */; };
+		9C5AF5732D5E287200468BEA /* SettingsRemoteRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5AF5722D5E287200468BEA /* SettingsRemoteRepositoryImpl.swift */; };
+		9C5AF5762D5E290700468BEA /* SettingsRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5AF5752D5E290700468BEA /* SettingsRemoteDataSource.swift */; };
 		9C60EC2A2D54E51E00080BA7 /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EBBA2D54E51E00080BA7 /* HomeModule.swift */; };
 		9C60EC2F2D54E51E00080BA7 /* HomeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EBCD2D54E51E00080BA7 /* HomeState.swift */; };
 		9C60EC302D54E51E00080BA7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EBCE2D54E51E00080BA7 /* HomeView.swift */; };
@@ -34,9 +39,9 @@
 		9C60EC5F2D54E77600080BA7 /* DataModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC5E2D54E77600080BA7 /* DataModule.swift */; };
 		9C60EC612D54E7F800080BA7 /* LoginModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC602D54E7F800080BA7 /* LoginModule.swift */; };
 		9C60EC632D54E80900080BA7 /* SettingsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC622D54E80900080BA7 /* SettingsModule.swift */; };
-		9C60EC652D54F1C300080BA7 /* SettingsRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC642D54F1C300080BA7 /* SettingsRemoteDataSource.swift */; };
-		9C60EC672D54F1E900080BA7 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC662D54F1E900080BA7 /* SettingsRepository.swift */; };
-		9C60EC692D54F20300080BA7 /* SettingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC682D54F20300080BA7 /* SettingsUseCase.swift */; };
+		9C60EC652D54F1C300080BA7 /* SettingsRemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC642D54F1C300080BA7 /* SettingsRemoteDataSourceImpl.swift */; };
+		9C60EC672D54F1E900080BA7 /* SettingsRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC662D54F1E900080BA7 /* SettingsRemoteRepository.swift */; };
+		9C60EC692D54F20300080BA7 /* SettingsRemoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC682D54F20300080BA7 /* SettingsRemoteUseCase.swift */; };
 		9C60EC6C2D55177200080BA7 /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC6B2D55177200080BA7 /* HomeUseCase.swift */; };
 		9C60EC6E2D55179C00080BA7 /* HomeRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC6D2D55179C00080BA7 /* HomeRemoteRepository.swift */; };
 		9C60EC712D55181A00080BA7 /* HomeRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC702D55181A00080BA7 /* HomeRemoteDataSource.swift */; };
@@ -49,6 +54,12 @@
 		9C6204762D53E5120068BAAB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9C6204752D53E5120068BAAB /* Alamofire */; };
 		9CE0F86D2D5CDC2A00F834A2 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0F86C2D5CDC2A00F834A2 /* LoginEntity.swift */; };
 		9CE0F86F2D5CDC3F00F834A2 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0F86E2D5CDC3F00F834A2 /* LoginModel.swift */; };
+		9CE0F8712D5D463300F834A2 /* LoginRemoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0F8702D5D463300F834A2 /* LoginRemoteUseCase.swift */; };
+		9CE0F8732D5D464B00F834A2 /* LoginRemoteUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0F8722D5D464B00F834A2 /* LoginRemoteUseCaseImpl.swift */; };
+		9CE0F8752D5D479900F834A2 /* LoginRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0F8742D5D479900F834A2 /* LoginRemoteRepository.swift */; };
+		9CE0F8772D5D487E00F834A2 /* LoginRemoteRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0F8762D5D487E00F834A2 /* LoginRemoteRepositoryImpl.swift */; };
+		9CE0F87A2D5D490700F834A2 /* LoginRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0F8792D5D490700F834A2 /* LoginRemoteDataSource.swift */; };
+		9CE0F87C2D5D496000F834A2 /* LoginRemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0F87B2D5D496000F834A2 /* LoginRemoteDataSourceImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +92,11 @@
 		9C475C8A2D52DB2000EAE3C5 /* VolunteersiOsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteersiOsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9C475CA22D52E49200EAE3C5 /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
 		9C475CA42D52E4D100EAE3C5 /* NetworkModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModule.swift; sourceTree = "<group>"; };
+		9C5AF56C2D5E253E00468BEA /* SettingsRemoteUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRemoteUseCaseImpl.swift; sourceTree = "<group>"; };
+		9C5AF56E2D5E260D00468BEA /* SettingsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEntity.swift; sourceTree = "<group>"; };
+		9C5AF5702D5E264600468BEA /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		9C5AF5722D5E287200468BEA /* SettingsRemoteRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRemoteRepositoryImpl.swift; sourceTree = "<group>"; };
+		9C5AF5752D5E290700468BEA /* SettingsRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRemoteDataSource.swift; sourceTree = "<group>"; };
 		9C60EBBA2D54E51E00080BA7 /* HomeModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
 		9C60EBCD2D54E51E00080BA7 /* HomeState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeState.swift; sourceTree = "<group>"; };
 		9C60EBCE2D54E51E00080BA7 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -99,9 +115,9 @@
 		9C60EC5E2D54E77600080BA7 /* DataModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModule.swift; sourceTree = "<group>"; };
 		9C60EC602D54E7F800080BA7 /* LoginModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModule.swift; sourceTree = "<group>"; };
 		9C60EC622D54E80900080BA7 /* SettingsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModule.swift; sourceTree = "<group>"; };
-		9C60EC642D54F1C300080BA7 /* SettingsRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRemoteDataSource.swift; sourceTree = "<group>"; };
-		9C60EC662D54F1E900080BA7 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
-		9C60EC682D54F20300080BA7 /* SettingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUseCase.swift; sourceTree = "<group>"; };
+		9C60EC642D54F1C300080BA7 /* SettingsRemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRemoteDataSourceImpl.swift; sourceTree = "<group>"; };
+		9C60EC662D54F1E900080BA7 /* SettingsRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRemoteRepository.swift; sourceTree = "<group>"; };
+		9C60EC682D54F20300080BA7 /* SettingsRemoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRemoteUseCase.swift; sourceTree = "<group>"; };
 		9C60EC6B2D55177200080BA7 /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
 		9C60EC6D2D55179C00080BA7 /* HomeRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRemoteRepository.swift; sourceTree = "<group>"; };
 		9C60EC702D55181A00080BA7 /* HomeRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRemoteDataSource.swift; sourceTree = "<group>"; };
@@ -112,6 +128,12 @@
 		9C60EC7A2D551C8400080BA7 /*  HomeRemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " HomeRemoteDataSourceImpl.swift"; sourceTree = "<group>"; };
 		9CE0F86C2D5CDC2A00F834A2 /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
 		9CE0F86E2D5CDC3F00F834A2 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		9CE0F8702D5D463300F834A2 /* LoginRemoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRemoteUseCase.swift; sourceTree = "<group>"; };
+		9CE0F8722D5D464B00F834A2 /* LoginRemoteUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRemoteUseCaseImpl.swift; sourceTree = "<group>"; };
+		9CE0F8742D5D479900F834A2 /* LoginRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRemoteRepository.swift; sourceTree = "<group>"; };
+		9CE0F8762D5D487E00F834A2 /* LoginRemoteRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRemoteRepositoryImpl.swift; sourceTree = "<group>"; };
+		9CE0F8792D5D490700F834A2 /* LoginRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRemoteDataSource.swift; sourceTree = "<group>"; };
+		9CE0F87B2D5D496000F834A2 /* LoginRemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRemoteDataSourceImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +240,14 @@
 				9C60EC5E2D54E77600080BA7 /* DataModule.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		9C5AF5742D5E28DF00468BEA /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				9C5AF5752D5E290700468BEA /* SettingsRemoteDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		9C60EBB92D54E51E00080BA7 /* DataSources */ = {
@@ -354,6 +384,7 @@
 		9C60EBDF2D54E51E00080BA7 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				9CE0F87B2D5D496000F834A2 /* LoginRemoteDataSourceImpl.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -376,6 +407,7 @@
 		9C60EBE42D54E51E00080BA7 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				9CE0F8762D5D487E00F834A2 /* LoginRemoteRepositoryImpl.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -402,6 +434,7 @@
 		9C60EBE92D54E51E00080BA7 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				9CE0F8742D5D479900F834A2 /* LoginRemoteRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -409,6 +442,8 @@
 		9C60EBEA2D54E51E00080BA7 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				9CE0F8702D5D463300F834A2 /* LoginRemoteUseCase.swift */,
+				9CE0F8722D5D464B00F834A2 /* LoginRemoteUseCaseImpl.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -416,6 +451,7 @@
 		9C60EBEB2D54E51E00080BA7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				9CE0F8782D5D48E300F834A2 /* DataSources */,
 				9C60EBE82D54E51E00080BA7 /* Entities */,
 				9C60EBE92D54E51E00080BA7 /* Repositories */,
 				9C60EBEA2D54E51E00080BA7 /* UseCases */,
@@ -472,7 +508,7 @@
 		9C60EC042D54E51E00080BA7 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				9C60EC642D54F1C300080BA7 /* SettingsRemoteDataSource.swift */,
+				9C60EC642D54F1C300080BA7 /* SettingsRemoteDataSourceImpl.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -480,6 +516,7 @@
 		9C60EC072D54E51E00080BA7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9C5AF5702D5E264600468BEA /* SettingsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -494,6 +531,7 @@
 		9C60EC092D54E51E00080BA7 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				9C5AF5722D5E287200468BEA /* SettingsRemoteRepositoryImpl.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -512,6 +550,7 @@
 		9C60EC0D2D54E51E00080BA7 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				9C5AF56E2D5E260D00468BEA /* SettingsEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -519,7 +558,7 @@
 		9C60EC0E2D54E51E00080BA7 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				9C60EC662D54F1E900080BA7 /* SettingsRepository.swift */,
+				9C60EC662D54F1E900080BA7 /* SettingsRemoteRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -527,7 +566,8 @@
 		9C60EC0F2D54E51E00080BA7 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				9C60EC682D54F20300080BA7 /* SettingsUseCase.swift */,
+				9C60EC682D54F20300080BA7 /* SettingsRemoteUseCase.swift */,
+				9C5AF56C2D5E253E00468BEA /* SettingsRemoteUseCaseImpl.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -535,6 +575,7 @@
 		9C60EC102D54E51E00080BA7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				9C5AF5742D5E28DF00468BEA /* DataSources */,
 				9C60EC0D2D54E51E00080BA7 /* Entities */,
 				9C60EC0E2D54E51E00080BA7 /* Repositories */,
 				9C60EC0F2D54E51E00080BA7 /* UseCases */,
@@ -645,6 +686,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9CE0F8782D5D48E300F834A2 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				9CE0F8792D5D490700F834A2 /* LoginRemoteDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -786,7 +835,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C60EC592D54E51E00080BA7 /* AuthManager.swift in Sources */,
-				9C60EC692D54F20300080BA7 /* SettingsUseCase.swift in Sources */,
+				9C60EC692D54F20300080BA7 /* SettingsRemoteUseCase.swift in Sources */,
 				9C60EC302D54E51E00080BA7 /* HomeView.swift in Sources */,
 				9C60EC572D54E51E00080BA7 /* SettingsViewModel.swift in Sources */,
 				9C60EC792D551A6D00080BA7 /* HomeModel.swift in Sources */,
@@ -796,6 +845,8 @@
 				9C60EC6E2D55179C00080BA7 /* HomeRemoteRepository.swift in Sources */,
 				9C60EC442D54E51E00080BA7 /* LoginViewModel.swift in Sources */,
 				9C60EC4D2D54E51E00080BA7 /* Router.swift in Sources */,
+				9CE0F8732D5D464B00F834A2 /* LoginRemoteUseCaseImpl.swift in Sources */,
+				9CE0F87A2D5D490700F834A2 /* LoginRemoteDataSource.swift in Sources */,
 				9C60EC312D54E51E00080BA7 /* HomeViewModel.swift in Sources */,
 				9CE0F86D2D5CDC2A00F834A2 /* LoginEntity.swift in Sources */,
 				9C60EC732D5518FB00080BA7 /* HomeUseCaseImpl.swift in Sources */,
@@ -805,9 +856,14 @@
 				9C60EC6C2D55177200080BA7 /* HomeUseCase.swift in Sources */,
 				9C60EC5F2D54E77600080BA7 /* DataModule.swift in Sources */,
 				9C60EC7B2D551C8400080BA7 /*  HomeRemoteDataSourceImpl.swift in Sources */,
+				9C5AF56F2D5E260D00468BEA /* SettingsEntity.swift in Sources */,
 				9C60EC612D54E7F800080BA7 /* LoginModule.swift in Sources */,
-				9C60EC672D54F1E900080BA7 /* SettingsRepository.swift in Sources */,
+				9C5AF5712D5E264600468BEA /* SettingsModel.swift in Sources */,
+				9C60EC672D54F1E900080BA7 /* SettingsRemoteRepository.swift in Sources */,
+				9CE0F8752D5D479900F834A2 /* LoginRemoteRepository.swift in Sources */,
+				9C5AF5762D5E290700468BEA /* SettingsRemoteDataSource.swift in Sources */,
 				9C60EC712D55181A00080BA7 /* HomeRemoteDataSource.swift in Sources */,
+				9CE0F8772D5D487E00F834A2 /* LoginRemoteRepositoryImpl.swift in Sources */,
 				9C60EC4E2D54E51E00080BA7 /* Screens.swift in Sources */,
 				9C60EC552D54E51E00080BA7 /* SettingsState.swift in Sources */,
 				9C60EC432D54E51E00080BA7 /* LoginView.swift in Sources */,
@@ -815,11 +871,15 @@
 				9C60EC582D54E51E00080BA7 /* SplashScreenView.swift in Sources */,
 				9C60EC2F2D54E51E00080BA7 /* HomeState.swift in Sources */,
 				9C475CA52D52E4D100EAE3C5 /* NetworkModule.swift in Sources */,
+				9C5AF56D2D5E253F00468BEA /* SettingsRemoteUseCaseImpl.swift in Sources */,
 				9C60EC752D55196D00080BA7 /* HomeRemoteRepositoryImpl.swift in Sources */,
-				9C60EC652D54F1C300080BA7 /* SettingsRemoteDataSource.swift in Sources */,
+				9C60EC652D54F1C300080BA7 /* SettingsRemoteDataSourceImpl.swift in Sources */,
+				9CE0F87C2D5D496000F834A2 /* LoginRemoteDataSourceImpl.swift in Sources */,
 				9C60EC772D551A5800080BA7 /* HomeEntity.swift in Sources */,
 				9C475CA32D52E49200EAE3C5 /* AppModule.swift in Sources */,
 				9C60EC422D54E51E00080BA7 /* LoginState.swift in Sources */,
+				9C5AF5732D5E287200468BEA /* SettingsRemoteRepositoryImpl.swift in Sources */,
+				9CE0F8712D5D463300F834A2 /* LoginRemoteUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

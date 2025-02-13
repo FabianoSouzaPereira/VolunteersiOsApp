@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol SettingsRemoteUseCase {
+    func getSettings() async throws -> [SettingsEntity]
+}

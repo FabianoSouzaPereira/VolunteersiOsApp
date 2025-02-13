@@ -9,8 +9,8 @@ import Swinject
 
 class DataModule {
     static func register(in container: Container) {
-        container.register(UserRepository.self) { resolver in
-            UserRepositoryImpl(apiClient: resolver.resolve(ApiClient.self)!)
-        }.inObjectScope(.container)
+      //  container.register(UserRemoteRepository.self) { resolver in
+      //      UserRemoteRepositoryImpl(apiClient: resolver.resolve(ApiClient.self)!)
+      //  }.inObjectScope(.container)
     }
 }

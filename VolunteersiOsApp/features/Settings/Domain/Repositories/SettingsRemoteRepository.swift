@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol SettingsRemoteRepository {
+    func getSettings() async throws -> [SettingsEntity]
+}

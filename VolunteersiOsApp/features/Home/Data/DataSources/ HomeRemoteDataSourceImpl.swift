@@ -10,7 +10,7 @@ import Foundation
 final class  HomeRemoteDataSourceImpl: HomeRemoteDataSource {
     
     func fetchHomeData() async throws -> [HomeModel] {
-        <#code#>
+        return [HomeModel(id: "100",username: "", lastLogin: Date(), notifications: 0)]
     }
     
 }

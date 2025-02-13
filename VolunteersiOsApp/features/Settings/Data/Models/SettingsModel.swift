@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct SettingsModel : SettingsEntity {
+struct SettingsModel : SettingsEntity, Codable {
     var id: String
 }

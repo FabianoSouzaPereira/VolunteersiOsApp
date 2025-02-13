@@ -22,7 +22,7 @@ class SettingsModule {
         }.inObjectScope(.container)
         
         container.register(SettingsViewModel.self) { resolver in
-            SettingsViewModel(SettingsRemoteUseCase: resolver.resolve(SettingsRemoteUseCase.self)!)
+            SettingsViewModel(useCase: resolver.resolve(SettingsRemoteUseCase.self)!)
         }.inObjectScope(.transient)
     }
 }

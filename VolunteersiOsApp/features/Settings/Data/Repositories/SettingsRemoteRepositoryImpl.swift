@@ -8,9 +8,9 @@
 import Foundation
 
 class SettingsRemoteRepositoryImpl : SettingsRemoteRepository {
-    private let dataSource: SettingsRemoteDatasource
+    private let dataSource: SettingsRemoteDataSource
     
-    init(dataSource: SettingsRemoteDatasource) {
+    init(dataSource: SettingsRemoteDataSource) {
         self.dataSource = dataSource
     }
     

@@ -6,11 +6,50 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import SwiftUI
 
-class SettingsRemoteDataSourceImpl : SettingsRemoteDataSource {
+class SettingsRemoteDataSourceImpl: SettingsRemoteDataSource {
+    private let firestore: Firestore = AppModule.shared.resolve(Firestore.self)
+    private let apiBaseURL = "https://api.seuservico.com/settings"
+    
+    @StateObject private var appConfig: AppConfig
+    
+    init() {
+        _appConfig = StateObject(wrappedValue: AppConfig(initialState: true))
+    }
+
+    
     func getSettings() async throws -> [SettingsModel] {
-        <#code#>
+        
+        if appConfig.isUsingFirebase {
+            return try await fetchSettingsFromFirestore()
+        } else {
+            return try await fetchSettingsFromAPI()
+        }
     }
     
+    private func fetchSettingsFromFirestore() async throws -> [SettingsModel] {
+        let snapshot = try await firestore.collection("settings").getDocuments()
+        return snapshot.documents.compactMap { doc in
+            try? doc.data(as: SettingsModel.self)
+        }
+    }
     
+    private func fetchSettingsFromAPI() async throws -> [SettingsModel] {
+        guard let url = URL(string: apiBaseURL) else {
+            throw URLError(.badURL)
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw URLError(.badServerResponse)
+        }
+        
+        return try JSONDecoder().decode([SettingsModel].self, from: data)
+    }
 }

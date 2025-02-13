@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import Combine
 
-class SettingsViewModel {
+class SettingsViewModel: ObservableObject {
     @Published var state: SettingsState = .initial
-    private var useCase: SettingsUseCase
+    private var useCase: SettingsRemoteUseCase
     
-    init(useCase: SettingsUseCase) {
+    init(useCase: SettingsRemoteUseCase) {
         self.useCase = useCase
     }
     

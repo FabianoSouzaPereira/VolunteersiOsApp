@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LoginModel : LoginEntity {
+struct LoginModel : LoginEntity, Codable {
     let id: String
     let username: String
     let lastLogin: Date

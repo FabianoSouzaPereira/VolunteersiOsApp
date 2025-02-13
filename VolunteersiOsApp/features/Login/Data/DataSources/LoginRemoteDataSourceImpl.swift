@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 class LoginRemoteDataSourceImpl: LoginRemoteDataSource {
+    let firestore: Firestore = AppModule.shared.resolve(Firestore.self)
+
     
     
     func login() async throws -> [LoginModel] {

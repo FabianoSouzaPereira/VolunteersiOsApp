@@ -9,7 +9,9 @@ import Foundation
 import SwiftUI
 
 struct SettingsView: View {
+    @ObservedObject var viewModel: SettingsViewModel
     @EnvironmentObject var router: Router
+    @EnvironmentObject var authManager: AuthManager
     
     var body: some View {
         VStack {

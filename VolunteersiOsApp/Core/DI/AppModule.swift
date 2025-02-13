@@ -18,6 +18,7 @@ class AppModule {
         CoreModule.register(in: container)
         NetworkModule.register(in: container)
         DataModule.register(in: container)
+        FirebaseModule.register(in: container)
         
         // Registra módulos por feature
         HomeModule.register(in: container)

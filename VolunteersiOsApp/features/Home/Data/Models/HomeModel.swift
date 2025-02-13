@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HomeModel: HomeEntity {
+struct HomeModel: HomeEntity, Codable {
     let id: String
     let username: String
     let lastLogin: Date

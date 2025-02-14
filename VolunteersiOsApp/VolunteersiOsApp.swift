@@ -18,6 +18,7 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct VolunteersiOsApp: App {
@@ -26,6 +27,7 @@ struct VolunteersiOsApp: App {
     @StateObject private var appConfig: AppConfig
 
     init() {
+        FirebaseApp.configure()
         let resolvedRouter: Router = diContainer.resolve(Router.self)
         let resolvedAppConfig: AppConfig = diContainer.resolve(AppConfig.self)
         

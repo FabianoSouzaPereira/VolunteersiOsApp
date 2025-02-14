@@ -18,8 +18,8 @@ struct HomeView: View {
             switch viewModel.state {
             case .loading:
                 ProgressView()
-            case .success(let username):
-                Text("Bem-vindo, \(username)")
+            case .success(let data):
+                Text("Bem-vindo, \(data[0].username)")
                     .font(.largeTitle)
                     .padding()
             case .error(let message):

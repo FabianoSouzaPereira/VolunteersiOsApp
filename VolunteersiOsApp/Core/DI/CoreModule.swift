@@ -12,5 +12,8 @@ class CoreModule {
     static func register(in container: Container) {
         container.register(Logger.self) { _ in Logger() }
             .inObjectScope(.container)
+        
+        container.register(Router.self) { _ in Router() }
+            .inObjectScope(.container)
     }
 }

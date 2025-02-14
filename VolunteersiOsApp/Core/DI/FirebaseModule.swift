@@ -18,5 +18,8 @@ class FirebaseModule {
         container.register(Firestore.self) { _ in
             Firestore.firestore()
         }.inObjectScope(.container)
+        
+        container.register(AuthManager.self) { _ in AuthManager() }
+            .inObjectScope(.container)
     }
 }

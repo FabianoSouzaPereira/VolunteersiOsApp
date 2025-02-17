@@ -7,6 +7,8 @@
 
 import Swinject
 import Firebase
+import FirebaseAuth
+import FirebaseFirestore
 
 class FirebaseModule {
     static func register(in container: Container) {
@@ -15,6 +17,10 @@ class FirebaseModule {
             return FirebaseApp.app()!
         }.inObjectScope(.container)
         
+        container.register(Auth.self) { _ in
+            Auth.auth()
+        }.inObjectScope(.container)
+
         container.register(Firestore.self) { _ in
             Firestore.firestore()
         }.inObjectScope(.container)

@@ -14,8 +14,9 @@ class LoginRemoteRepositoryImpl : LoginRemoteRepository {
         self.dataSource = dataSource
     }
     
-    func login() async throws -> [LoginEntity] {
-        return try await dataSource.login()
+
+    func login(email: String, password: String) async throws -> LoginEntity {
+        return try await dataSource.login(email: email, password: password)
     }
     
 }

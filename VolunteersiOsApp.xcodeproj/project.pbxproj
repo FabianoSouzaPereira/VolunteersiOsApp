@@ -61,6 +61,21 @@
 		9C60EC7B2D551C8400080BA7 /*  HomeRemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC7A2D551C8400080BA7 /*  HomeRemoteDataSourceImpl.swift */; };
 		9C6204742D53E50C0068BAAB /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9C6204732D53E50C0068BAAB /* Swinject */; };
 		9C6204762D53E5120068BAAB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9C6204752D53E5120068BAAB /* Alamofire */; };
+		9C90D33C2D60DE4E00903BE1 /* LoginErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90D33B2D60DE4E00903BE1 /* LoginErrorView.swift */; };
+		9C90D33E2D60E2B600903BE1 /* DefaultRetryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90D33D2D60E2B600903BE1 /* DefaultRetryController.swift */; };
+		9C90D3402D60E3AC00903BE1 /* RetryControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90D33F2D60E3AC00903BE1 /* RetryControllerProtocol.swift */; };
+		9CD4A4F92D628074007CCC07 /* LoginFirebaseDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4A4F82D628074007CCC07 /* LoginFirebaseDataSourceImpl.swift */; };
+		9CD4A4FB2D628CE7007CCC07 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4A4FA2D628CE7007CCC07 /* UserModel.swift */; };
+		9CD4A5022D628E2A007CCC07 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4A5012D628E2A007CCC07 /* UserEntity.swift */; };
+		9CD4A5042D629108007CCC07 /* UserAddressEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4A5032D629108007CCC07 /* UserAddressEntity.swift */; };
+		9CD4A5062D62911A007CCC07 /* UserPhonesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4A5052D62911A007CCC07 /* UserPhonesEntity.swift */; };
+		9CD4A5082D62912B007CCC07 /* UserSocialMediaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4A5072D62912B007CCC07 /* UserSocialMediaEntity.swift */; };
+		9CD4A50A2D62913D007CCC07 /* UserNotificationSettingsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4A5092D62913D007CCC07 /* UserNotificationSettingsEntity.swift */; };
+		9CD4A50C2D629298007CCC07 /* UserAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4A50B2D629298007CCC07 /* UserAddressModel.swift */; };
+		9CD4A50E2D6292AD007CCC07 /* UserPhonesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4A50D2D6292AD007CCC07 /* UserPhonesModel.swift */; };
+		9CD4A5102D6292C9007CCC07 /* UserSocialMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4A50F2D6292C9007CCC07 /* UserSocialMediaModel.swift */; };
+		9CD4A5122D6292E4007CCC07 /* UserNotificationSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4A5112D6292E4007CCC07 /* UserNotificationSettingsModel.swift */; };
+		9CD4A5142D63469B007CCC07 /* FirestoreUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4A5132D63469B007CCC07 /* FirestoreUserModel.swift */; };
 		9CE0F86D2D5CDC2A00F834A2 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0F86C2D5CDC2A00F834A2 /* LoginEntity.swift */; };
 		9CE0F86F2D5CDC3F00F834A2 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0F86E2D5CDC3F00F834A2 /* LoginModel.swift */; };
 		9CE0F8712D5D463300F834A2 /* LoginRemoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0F8702D5D463300F834A2 /* LoginRemoteUseCase.swift */; };
@@ -140,6 +155,21 @@
 		9C60EC762D551A5800080BA7 /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
 		9C60EC782D551A6D00080BA7 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		9C60EC7A2D551C8400080BA7 /*  HomeRemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " HomeRemoteDataSourceImpl.swift"; sourceTree = "<group>"; };
+		9C90D33B2D60DE4E00903BE1 /* LoginErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrorView.swift; sourceTree = "<group>"; };
+		9C90D33D2D60E2B600903BE1 /* DefaultRetryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRetryController.swift; sourceTree = "<group>"; };
+		9C90D33F2D60E3AC00903BE1 /* RetryControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryControllerProtocol.swift; sourceTree = "<group>"; };
+		9CD4A4F82D628074007CCC07 /* LoginFirebaseDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFirebaseDataSourceImpl.swift; sourceTree = "<group>"; };
+		9CD4A4FA2D628CE7007CCC07 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		9CD4A5012D628E2A007CCC07 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		9CD4A5032D629108007CCC07 /* UserAddressEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddressEntity.swift; sourceTree = "<group>"; };
+		9CD4A5052D62911A007CCC07 /* UserPhonesEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhonesEntity.swift; sourceTree = "<group>"; };
+		9CD4A5072D62912B007CCC07 /* UserSocialMediaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialMediaEntity.swift; sourceTree = "<group>"; };
+		9CD4A5092D62913D007CCC07 /* UserNotificationSettingsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationSettingsEntity.swift; sourceTree = "<group>"; };
+		9CD4A50B2D629298007CCC07 /* UserAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddressModel.swift; sourceTree = "<group>"; };
+		9CD4A50D2D6292AD007CCC07 /* UserPhonesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhonesModel.swift; sourceTree = "<group>"; };
+		9CD4A50F2D6292C9007CCC07 /* UserSocialMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialMediaModel.swift; sourceTree = "<group>"; };
+		9CD4A5112D6292E4007CCC07 /* UserNotificationSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationSettingsModel.swift; sourceTree = "<group>"; };
+		9CD4A5132D63469B007CCC07 /* FirestoreUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreUserModel.swift; sourceTree = "<group>"; };
 		9CE0F86C2D5CDC2A00F834A2 /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
 		9CE0F86E2D5CDC3F00F834A2 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		9CE0F8702D5D463300F834A2 /* LoginRemoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRemoteUseCase.swift; sourceTree = "<group>"; };
@@ -277,6 +307,8 @@
 			isa = PBXGroup;
 			children = (
 				9C5AF5832D5E7F6D00468BEA /* AppConfig.swift */,
+				9C90D33D2D60E2B600903BE1 /* DefaultRetryController.swift */,
+				9C90D33F2D60E3AC00903BE1 /* RetryControllerProtocol.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -416,6 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				9CE0F87B2D5D496000F834A2 /* LoginRemoteDataSourceImpl.swift */,
+				9CD4A4F82D628074007CCC07 /* LoginFirebaseDataSourceImpl.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -503,6 +536,7 @@
 				9C60EBF62D54E51E00080BA7 /* LoginState.swift */,
 				9C60EBF72D54E51E00080BA7 /* LoginView.swift */,
 				9C60EBF82D54E51E00080BA7 /* LoginViewModel.swift */,
+				9C90D33B2D60DE4E00903BE1 /* LoginErrorView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -671,6 +705,7 @@
 		9C60EC292D54E51E00080BA7 /* features */ = {
 			isa = PBXGroup;
 			children = (
+				9CD4A4FC2D628D41007CCC07 /* Common */,
 				9C60EC6A2D54F31200080BA7 /* Splash */,
 				9C60EBDE2D54E51E00080BA7 /* Home */,
 				9C60EC032D54E51E00080BA7 /* Login */,
@@ -717,6 +752,56 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9CD4A4FC2D628D41007CCC07 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9CD4A4FD2D628D5C007CCC07 /* Data */,
+				9CD4A5002D628DAD007CCC07 /* Domain */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9CD4A4FD2D628D5C007CCC07 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9CD4A4FE2D628D7E007CCC07 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9CD4A4FE2D628D7E007CCC07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9CD4A4FA2D628CE7007CCC07 /* UserModel.swift */,
+				9CD4A50B2D629298007CCC07 /* UserAddressModel.swift */,
+				9CD4A50D2D6292AD007CCC07 /* UserPhonesModel.swift */,
+				9CD4A50F2D6292C9007CCC07 /* UserSocialMediaModel.swift */,
+				9CD4A5112D6292E4007CCC07 /* UserNotificationSettingsModel.swift */,
+				9CD4A5132D63469B007CCC07 /* FirestoreUserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9CD4A4FF2D628D96007CCC07 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9CD4A5012D628E2A007CCC07 /* UserEntity.swift */,
+				9CD4A5032D629108007CCC07 /* UserAddressEntity.swift */,
+				9CD4A5052D62911A007CCC07 /* UserPhonesEntity.swift */,
+				9CD4A5072D62912B007CCC07 /* UserSocialMediaEntity.swift */,
+				9CD4A5092D62913D007CCC07 /* UserNotificationSettingsEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		9CD4A5002D628DAD007CCC07 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9CD4A4FF2D628D96007CCC07 /* Entity */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		9CE0F8782D5D48E300F834A2 /* DataSources */ = {
@@ -879,6 +964,9 @@
 				9C60EC572D54E51E00080BA7 /* SettingsViewModel.swift in Sources */,
 				9C60EC792D551A6D00080BA7 /* HomeModel.swift in Sources */,
 				9C475C702D52DB1A00EAE3C5 /* ContentView.swift in Sources */,
+				9C90D3402D60E3AC00903BE1 /* RetryControllerProtocol.swift in Sources */,
+				9C90D33E2D60E2B600903BE1 /* DefaultRetryController.swift in Sources */,
+				9C90D33C2D60DE4E00903BE1 /* LoginErrorView.swift in Sources */,
 				9C60EC2A2D54E51E00080BA7 /* HomeModule.swift in Sources */,
 				9C60EC562D54E51E00080BA7 /* SettingsView.swift in Sources */,
 				9C60EC6E2D55179C00080BA7 /* HomeRemoteRepository.swift in Sources */,
@@ -888,7 +976,9 @@
 				9C5AF5812D5E3A9D00468BEA /* FirebaseModule.swift in Sources */,
 				9CE0F87A2D5D490700F834A2 /* LoginRemoteDataSource.swift in Sources */,
 				9C60EC312D54E51E00080BA7 /* HomeViewModel.swift in Sources */,
+				9CD4A4F92D628074007CCC07 /* LoginFirebaseDataSourceImpl.swift in Sources */,
 				9CE0F86D2D5CDC2A00F834A2 /* LoginEntity.swift in Sources */,
+				9CD4A50A2D62913D007CCC07 /* UserNotificationSettingsEntity.swift in Sources */,
 				9C60EC732D5518FB00080BA7 /* HomeUseCaseImpl.swift in Sources */,
 				9C60EC632D54E80900080BA7 /* SettingsModule.swift in Sources */,
 				9CE0F86F2D5CDC3F00F834A2 /* LoginModel.swift in Sources */,
@@ -898,10 +988,16 @@
 				9C60EC7B2D551C8400080BA7 /*  HomeRemoteDataSourceImpl.swift in Sources */,
 				9C5AF56F2D5E260D00468BEA /* SettingsEntity.swift in Sources */,
 				9C60EC612D54E7F800080BA7 /* LoginModule.swift in Sources */,
+				9CD4A5082D62912B007CCC07 /* UserSocialMediaEntity.swift in Sources */,
 				9C5AF5712D5E264600468BEA /* SettingsModel.swift in Sources */,
+				9CD4A50C2D629298007CCC07 /* UserAddressModel.swift in Sources */,
+				9CD4A50E2D6292AD007CCC07 /* UserPhonesModel.swift in Sources */,
 				9C60EC672D54F1E900080BA7 /* SettingsRemoteRepository.swift in Sources */,
+				9CD4A5062D62911A007CCC07 /* UserPhonesEntity.swift in Sources */,
+				9CD4A5022D628E2A007CCC07 /* UserEntity.swift in Sources */,
 				9CE0F8752D5D479900F834A2 /* LoginRemoteRepository.swift in Sources */,
 				9C5AF5762D5E290700468BEA /* SettingsRemoteDataSource.swift in Sources */,
+				9CD4A5042D629108007CCC07 /* UserAddressEntity.swift in Sources */,
 				9C60EC712D55181A00080BA7 /* HomeRemoteDataSource.swift in Sources */,
 				9CE0F8772D5D487E00F834A2 /* LoginRemoteRepositoryImpl.swift in Sources */,
 				9C60EC4E2D54E51E00080BA7 /* Screens.swift in Sources */,
@@ -910,6 +1006,7 @@
 				9C60EC432D54E51E00080BA7 /* LoginView.swift in Sources */,
 				9C475C6E2D52DB1A00EAE3C5 /* VolunteersiOsApp.swift in Sources */,
 				9C60EC582D54E51E00080BA7 /* SplashScreenView.swift in Sources */,
+				9CD4A5122D6292E4007CCC07 /* UserNotificationSettingsModel.swift in Sources */,
 				9C60EC2F2D54E51E00080BA7 /* HomeState.swift in Sources */,
 				9C475CA52D52E4D100EAE3C5 /* NetworkModule.swift in Sources */,
 				9C5AF56D2D5E253F00468BEA /* SettingsRemoteUseCaseImpl.swift in Sources */,
@@ -918,9 +1015,12 @@
 				9CE0F87C2D5D496000F834A2 /* LoginRemoteDataSourceImpl.swift in Sources */,
 				9C60EC772D551A5800080BA7 /* HomeEntity.swift in Sources */,
 				9C475CA32D52E49200EAE3C5 /* AppModule.swift in Sources */,
+				9CD4A5142D63469B007CCC07 /* FirestoreUserModel.swift in Sources */,
 				9C60EC422D54E51E00080BA7 /* LoginState.swift in Sources */,
 				9C5AF5732D5E287200468BEA /* SettingsRemoteRepositoryImpl.swift in Sources */,
 				9CE0F8712D5D463300F834A2 /* LoginRemoteUseCase.swift in Sources */,
+				9CD4A5102D6292C9007CCC07 /* UserSocialMediaModel.swift in Sources */,
+				9CD4A4FB2D628CE7007CCC07 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

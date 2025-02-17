@@ -13,6 +13,13 @@ class LoginModule {
             LoginRemoteDataSourceImpl()
         }.inObjectScope(.container)
         
+        container.register(LoginRemoteDataSource.self) { resolver in
+            LoginFirebaseDataSourceImpl(
+                auth: resolver.resolve(Auth.self)!,
+                firestore: resolver.resolve(Firestore.self)!
+            )
+        }
+        
         container.register(LoginRemoteRepository.self) { resolver in
             LoginRemoteRepositoryImpl(dataSource: resolver.resolve(LoginRemoteDataSource.self)!)
         }.inObjectScope(.container)
@@ -22,7 +29,8 @@ class LoginModule {
         }.inObjectScope(.container)
         
         container.register(LoginViewModel.self) { resolver in
-            LoginViewModel(loginRemoteUseCase: resolver.resolve(LoginRemoteUseCase.self)!)
+            let retryController = resolver.resolve((any RetryControllerProtocol).self)!
+            return LoginViewModel(loginRemoteUseCase: resolver.resolve(LoginRemoteUseCase.self)!, retryController: retryController)
         }.inObjectScope(.transient)
     }
 }

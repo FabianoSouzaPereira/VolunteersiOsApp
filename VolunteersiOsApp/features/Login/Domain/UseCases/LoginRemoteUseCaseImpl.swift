@@ -14,7 +14,7 @@ final class LoginRemoteUseCaseImpl: LoginRemoteUseCase {
         self.repository = repository
     }
     
-    func login() async throws -> [LoginEntity] {
-        return try await repository.login()
+    func login(email: String, password: String) async throws -> LoginEntity {
+        return try await repository.login(email: email, password: password)
     }
 }

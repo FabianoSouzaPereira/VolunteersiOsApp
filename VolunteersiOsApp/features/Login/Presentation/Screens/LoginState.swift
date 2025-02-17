@@ -18,7 +18,7 @@ struct LoginData {
 enum LoginState {
     case idle
     case loading
-    case success(data: [LoginEntity])
+    case success(data: LoginEntity)
     case error(LoginError)
 }
 

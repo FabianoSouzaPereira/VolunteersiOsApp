@@ -8,5 +8,5 @@
 import Foundation
 
 protocol LoginRemoteDataSource {
-    func login() async throws -> [LoginModel]
+    func login(email: String, password: String) async throws -> LoginModel
 }

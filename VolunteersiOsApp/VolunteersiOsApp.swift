@@ -56,6 +56,15 @@ struct VolunteersiOsApp: App {
                             LoginView(viewModel: loginViewModel)
                         case .settings:
                             SettingsView(viewModel: settingsViewModel)
+                        case .loginerror:
+                            LoginErrorView(error: 
+                                LoginError.init(
+                                    message: "",
+                                    retryAction: {
+                                        ();
+                                    }
+                                )
+                            )
                         }
                     }
             }

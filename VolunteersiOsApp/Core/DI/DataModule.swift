@@ -12,5 +12,10 @@ class DataModule {
         container.register(AppConfig.self) { _ in
             AppConfig(initialState: true)
         }
+        
+        container.register((any RetryControllerProtocol).self) { _ in
+            DefaultRetryController()
+        }
+        .inObjectScope(.container)
     }
 }

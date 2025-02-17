@@ -9,19 +9,22 @@ import Foundation
 import Combine
 
 class LoginViewModel: ObservableObject {
-    @Published var state: LoginState = .initial
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var state: LoginState = .idle
     private let loginUseCase: LoginRemoteUseCase
+    private let retryController: any RetryControllerProtocol
     
-    init(loginRemoteUseCase: LoginRemoteUseCase) {
+    init(loginRemoteUseCase: LoginRemoteUseCase, retryController: any RetryControllerProtocol) {
         self.loginUseCase = loginRemoteUseCase
+        self.retryController = retryController
     }
-
+        
     func login() async {
+        state = .loading
         do {
-            
-            let data: [LoginEntity] = try await loginUseCase.login()
+            let data: LoginEntity = try await loginUseCase.login(email: email, password: password)
             state = .success(data: data)
-            
         } catch {
             state = .error(LoginError(message: error.localizedDescription, retryAction: {
                 await self.login()
@@ -29,6 +32,7 @@ class LoginViewModel: ObservableObject {
         }
     }
     
+>>>>>>> 39347e4 (rebased)
     func handleAction(_ action: LoginAction) {
         switch action {
         case .refresh:

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol LoginRemoteRepository {
-    func login() async throws -> [LoginEntity]
+    func login(email: String, password: String) async throws -> LoginEntity
 }

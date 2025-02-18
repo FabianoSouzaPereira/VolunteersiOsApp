@@ -1,7 +1,7 @@
 
 ## **Diferenças e Ajustes para Swift**
 
-[![Swift Version](https://img.shields.io/badge/swift-5.9-orange)](https://swift.org) [![Build Status](https://travis-ci.com/usuario/repositorio.svg?branch=main)](https://travis-ci.com/usuario/repositorio) [![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT) [![Downloads](https://img.shields.io/github/downloads/usuario/repositorio/total)](https://github.com/usuario/repositorio/releases)
+[![Swift Version](https://img.shields.io/badge/swift-5.9-orange)](https://swift.org) [![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT) [![Downloads](https://img.shields.io/github/downloads/usuario/repositorio/total)](https://github.com/usuario/repositorio/releases)
 ![Swinject Version](https://img.shields.io/badge/Swinject-2.9.1-blue) ![Swinject Version](https://img.shields.io/badge/Alamofire-5.10.2-blue) ![Swinject Version](https://img.shields.io/badge/Firebaser-11.8.1-blue)
 
 

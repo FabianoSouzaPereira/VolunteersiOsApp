@@ -515,8 +515,8 @@
 		9C60EBEB2D54E51E00080BA7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				9CE0F8782D5D48E300F834A2 /* DataSources */,
 				9C60EBE82D54E51E00080BA7 /* Entities */,
+				9CE0F8782D5D48E300F834A2 /* DataSources */,
 				9C60EBE92D54E51E00080BA7 /* Repositories */,
 				9C60EBEA2D54E51E00080BA7 /* UseCases */,
 			);
@@ -640,8 +640,8 @@
 		9C60EC102D54E51E00080BA7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				9C5AF5742D5E28DF00468BEA /* DataSources */,
 				9C60EC0D2D54E51E00080BA7 /* Entities */,
+				9C5AF5742D5E28DF00468BEA /* DataSources */,
 				9C60EC0E2D54E51E00080BA7 /* Repositories */,
 				9C60EC0F2D54E51E00080BA7 /* UseCases */,
 			);

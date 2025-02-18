@@ -32,7 +32,6 @@ class LoginViewModel: ObservableObject {
         }
     }
     
->>>>>>> 39347e4 (rebased)
     func handleAction(_ action: LoginAction) {
         switch action {
         case .refresh:

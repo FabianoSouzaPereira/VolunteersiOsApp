@@ -6,6 +6,8 @@
 //
 
 import Swinject
+import FirebaseAuth
+import FirebaseFirestore
 
 class LoginModule {
     static func register(in container: Container) {

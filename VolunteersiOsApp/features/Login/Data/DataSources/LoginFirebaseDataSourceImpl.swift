@@ -9,8 +9,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 
-class LoginFirebaseDataSourceImpl: LoginRemoteDataSource {
-    
+class LoginFirebaseDataSourceImpl: LoginFirebaseDataSource {
     private let auth: Auth
     private let firestore: Firestore
     
@@ -20,28 +19,43 @@ class LoginFirebaseDataSourceImpl: LoginRemoteDataSource {
         self.firestore = firestore
     }
     
-    func login(email: String, password: String) async throws -> LoginModel {
+    func login(email: String, password: String) async throws -> LoginFirebaseModel {
         do {
-            let result = try await auth.signIn(withEmail: email, password: password)
-            let user = result.user
+
+            let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
             
-            // Obtendo o ID Token do usuário
-            let idTokenResult = try await user.getIDTokenResult(forcingRefresh: true)
+            let user = authResult.user
             
-            let isAdminClaim = (idTokenResult.claims["admin"] as? Bool) ?? false
-            
-            
-            AppConfig(initialState: true).saveAdminClaim(adminClaim: isAdminClaim)
-            
-            return LoginModel(
+            let loginModel = LoginFirebaseModel(
                 id: user.uid,
-                username: user.displayName ?? "",
+                username: user.displayName ?? user.email ?? "",
                 lastLogin: Date(),
                 notifications: 0,
-                token: idTokenResult.token
+                token: user.refreshToken ?? ""
             )
+            
+            return loginModel
+            
+        } catch let error as NSError {
+            let requestError: RequestError
+            
+            switch error.code {
+                case AuthErrorCode.userNotFound.rawValue:
+                    requestError = UserError.userNotFound
+                case AuthErrorCode.wrongPassword.rawValue:
+                    requestError = UserError.passwordTooWeak
+                case AuthErrorCode.emailAlreadyInUse.rawValue:
+                    requestError = UserError.emailAlreadyInUse
+                case AuthErrorCode.invalidCredential.rawValue:
+                    requestError = UserError.invalidToken
+                default:
+                    requestError = GeneralRequestError.serverError
+            }
+            
+            throw requestError
         } catch {
-            throw NSError(domain: "AuthError", code: 400, userInfo: [NSLocalizedDescriptionKey: "Erro de autenticação: \(error.localizedDescription)"])
+            
+            throw GeneralRequestError.serverError
         }
     }
     

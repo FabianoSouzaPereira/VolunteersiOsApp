@@ -17,17 +17,16 @@ class AuthManager: ObservableObject {
 
     func checkLoginStatus() {
         // Simulação: busca do UserDefaults (ou Keychain, API, etc.)
-        let savedToken = UserDefaults.standard.string(forKey: "user_token")
+        let savedToken = TokenManager.shared.getToken()
         isAuthenticated = savedToken != nil
     }
 
     func login() {
-        UserDefaults.standard.set("dummy_token", forKey: "user_token")
         isAuthenticated = true
     }
 
     func logout() {
-        UserDefaults.standard.removeObject(forKey: "user_token")
+        TokenManager.shared.removeToken()
         isAuthenticated = false
     }
 }

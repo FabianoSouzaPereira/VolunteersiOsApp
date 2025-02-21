@@ -15,11 +15,24 @@ struct LoginData {
     static let empty = LoginData(username: "", lastLogin: Date(), notifications: 0)
 }
 
-enum LoginState {
+enum LoginState: Equatable {
     case idle
     case loading
     case success(data: LoginEntity)
     case error(LoginError)
+    
+    static func == (lhs: LoginState, rhs: LoginState) -> Bool {
+        switch (lhs, rhs) {
+            case (.idle, .idle), (.loading, .loading):
+                return true
+            case (.success(let lhsUser), .success(let rhsUser)):
+                return lhsUser.id == rhsUser.id // Comparação baseada em ID do usuário
+            case (.error(let lhsError), .error(let rhsError)):
+                return lhsError.message == rhsError.message // Comparação baseada na mensagem de erro
+            default:
+                return false
+        }
+    }
 }
 
 struct LoginError: Identifiable {

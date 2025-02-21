@@ -54,7 +54,7 @@ struct VolunteersiOsApp: App {
                                     .environmentObject(appConfig)
                                     .environmentObject(diContainer.resolve(AuthManager.self))
                         case .home:
-                            HomeView(viewModel: homeViewModel)
+                                HomeView(viewModel: homeViewModel, loginViewModel: loginViewModel)
                                     .environmentObject(router)
                                     .environmentObject(appConfig)
                                     .environmentObject(diContainer.resolve(AuthManager.self))

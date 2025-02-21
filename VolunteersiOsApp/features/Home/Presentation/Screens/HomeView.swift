@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
+    @ObservedObject var loginViewModel: LoginViewModel
     @EnvironmentObject var router: Router
     @EnvironmentObject var authManager: AuthManager
     @EnvironmentObject var appConfig: AppConfig
@@ -31,6 +32,11 @@ struct HomeView: View {
 
             Button("Ir para Configurações") {
                 router.goToSettings()
+            }
+            .buttonStyle(.bordered)
+            
+            Button("Logout") {
+                viewModel.handleAction(HomeAction.logout)
             }
             .buttonStyle(.bordered)
         }

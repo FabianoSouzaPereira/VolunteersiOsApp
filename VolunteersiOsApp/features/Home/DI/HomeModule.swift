@@ -22,7 +22,7 @@ class HomeModule {
         }.inObjectScope(.container)
         
         container.register(HomeViewModel.self) { resolver in
-            HomeViewModel(homeUseCase: resolver.resolve(HomeUseCase.self)!)
+            HomeViewModel(homeUseCase: resolver.resolve(HomeUseCase.self)!, router: resolver.resolve(Router.self)!)
         }.inObjectScope(.transient)
     }
 }

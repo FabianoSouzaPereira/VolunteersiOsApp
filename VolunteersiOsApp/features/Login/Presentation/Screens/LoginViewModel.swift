@@ -44,14 +44,17 @@ class LoginViewModel: ObservableObject {
             })))
         }
     }
-
+    
     
     func handleAction(_ action: LoginAction) {
         switch action {
         case .refresh:
             Task { await login() }
         case .logout:
-            // Implementar lógica de logout
+            Task {
+                TokenManager.shared.removeToken()
+                updateState(.idle)
+            }
             break
         case .goToSettings:
             // Navegação para settings

@@ -10,10 +10,12 @@ import Combine
 
 final class HomeViewModel: ObservableObject {
     @Published var state: HomeState = .initial
+    private var router: Router
     private let homeUseCase: HomeUseCase
 
-    init(homeUseCase: HomeUseCase) {
+    init(homeUseCase: HomeUseCase, router: Router) {
         self.homeUseCase = homeUseCase
+        self.router = router
     }
 
     func loadHomeData() async {
@@ -35,7 +37,10 @@ final class HomeViewModel: ObservableObject {
         case .refresh:
             Task { await loadHomeData() }
         case .logout:
-            // Implementar lógica de logout
+                Task {
+                    TokenManager.shared.removeToken()
+                    router.goToLogin()
+                }
             break
         case .goToSettings:
             // Navegação para settings

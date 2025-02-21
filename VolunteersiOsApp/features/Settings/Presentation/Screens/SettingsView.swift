@@ -12,6 +12,7 @@ struct SettingsView: View {
     @ObservedObject var viewModel: SettingsViewModel
     @EnvironmentObject var router: Router
     @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var appConfig: AppConfig
     
     var body: some View {
         VStack {
@@ -23,6 +24,11 @@ struct SettingsView: View {
                 router.goToHome()
             }
             .buttonStyle(.bordered)
+            .onAppear {
+                Task {
+                    print("Router in SettingsView: \(router)")
+                }
+            }
         }
     }
 }

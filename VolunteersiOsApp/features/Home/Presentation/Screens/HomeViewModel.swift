@@ -17,15 +17,15 @@ final class HomeViewModel: ObservableObject {
     }
 
     func loadHomeData() async {
-        state = .loading
+        updateState(.loading)
         
         do {
             let data: [HomeEntity] = try await homeUseCase.fetchHomeData()
-            state = .success(data: data)
+            updateState(.success(data: data))
         } catch {
-            state = .error(HomeError(message: error.localizedDescription) { [weak self] in
+            updateState(.error(HomeError(message: error.localizedDescription) { [weak self] in
                 await self?.loadHomeData()
-            })
+            }))
         }
     }
 
@@ -40,6 +40,12 @@ final class HomeViewModel: ObservableObject {
         case .goToSettings:
             // Navegação para settings
             break
+        }
+    }
+    
+    private func updateState(_ newState: HomeState) {
+        DispatchQueue.main.async {
+            self.state = newState
         }
     }
 }

@@ -49,13 +49,25 @@ struct VolunteersiOsApp: App {
                     .navigationDestination(for: Screen.self) { screen in
                         switch screen {
                         case .splash:
-                            SplashScreenView()
+                                SplashScreenView() 
+                                    .environmentObject(router)
+                                    .environmentObject(appConfig)
+                                    .environmentObject(diContainer.resolve(AuthManager.self))
                         case .home:
                             HomeView(viewModel: homeViewModel)
+                                    .environmentObject(router)
+                                    .environmentObject(appConfig)
+                                    .environmentObject(diContainer.resolve(AuthManager.self))
                         case .login:
                             LoginView(viewModel: loginViewModel)
+                                    .environmentObject(router)
+                                    .environmentObject(appConfig)
+                                    .environmentObject(diContainer.resolve(AuthManager.self))
                         case .settings:
                             SettingsView(viewModel: settingsViewModel)
+                                    .environmentObject(router)
+                                    .environmentObject(appConfig)
+                                    .environmentObject(diContainer.resolve(AuthManager.self))
                         case .loginerror:
                             LoginErrorView(error: 
                                 LoginError.init(

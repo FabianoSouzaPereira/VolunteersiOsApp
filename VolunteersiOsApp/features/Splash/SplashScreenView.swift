@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct SplashScreenView: View {
-    @EnvironmentObject var authManager: AuthManager
     @EnvironmentObject var router: Router
+    @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var appConfig: AppConfig
 
     var body: some View {
         VStack {
@@ -22,12 +23,11 @@ struct SplashScreenView: View {
                 .progressViewStyle(CircularProgressViewStyle())
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                if authManager.isAuthenticated {
-                    router.goToHome()
-                } else {
-                    router.goToLogin()
-                }
+            print("Router in SplashScreenView: \(router)")
+            if authManager.isAuthenticated {
+                router.goToHome()
+            } else {
+                router.goToLogin()
             }
         }
     }

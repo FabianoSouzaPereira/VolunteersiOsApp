@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 class LoginViewModel: ObservableObject {
-    @Published var email: String = ""
-    @Published var password: String = ""
+    @Published var email: String = "jeovajire2003@gmail.com"
+    @Published var password: String = "123456"
     @Published var state: LoginState = .idle
     private let loginUseCase: LoginRemoteUseCase
     private let retryController: any RetryControllerProtocol
@@ -21,14 +21,16 @@ class LoginViewModel: ObservableObject {
     }
         
     func login() async {
-        state = .loading
+        updateState(.loading)
+        
         do {
             let data: LoginEntity = try await loginUseCase.login(email: email, password: password)
-            state = .success(data: data)
+            print(data)
+            updateState(.success(data: data))
         } catch {
-            state = .error(LoginError(message: error.localizedDescription, retryAction: {
-                await self.login()
-            }))
+            updateState(.error(LoginError(message: error.localizedDescription, retryAction: {
+                Task { await self.login() }
+            })))
         }
     }
     
@@ -42,6 +44,12 @@ class LoginViewModel: ObservableObject {
         case .goToSettings:
             // Navegação para settings
             break
+        }
+    }
+    
+    private func updateState(_ newState: LoginState) {
+        DispatchQueue.main.async {
+            self.state = newState
         }
     }
 }

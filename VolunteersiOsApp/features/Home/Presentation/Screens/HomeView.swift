@@ -12,6 +12,7 @@ struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
     @EnvironmentObject var router: Router
     @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var appConfig: AppConfig
     
     var body: some View {
         VStack {
@@ -35,6 +36,7 @@ struct HomeView: View {
         }
         .onAppear {
             Task {
+                print("Router in HomeView: \(router)")
                 await viewModel.loadHomeData()
             }
         }

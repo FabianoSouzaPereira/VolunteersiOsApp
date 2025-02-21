@@ -11,27 +11,36 @@ class Router: ObservableObject {
     @Published var path = NavigationPath()
     
     func goToSplash() {
-        path.removeLast(path.count)
-        path.append(Screen.splash)
+        DispatchQueue.main.async {
+            self.path.removeLast(self.path.count)
+            self.path.append(Screen.splash)
+       }
     }
     
     func goToHome() {
-        path.removeLast(path.count)
-        path.append(Screen.home)
+        DispatchQueue.main.async {
+            self.path.removeLast(self.path.count)
+            self.path.append(Screen.home)
+        }
     }
     
     func goToLogin() {
-        path.removeLast(path.count)
-        path.append(Screen.login)
+        DispatchQueue.main.async {
+            self.path.removeLast(self.path.count)
+            self.path.append(Screen.login)
+        }
     }
     
     func goToSettings() {
-        path.removeLast(path.count)
-        path.append(Screen.settings)
+        DispatchQueue.main.async {
+            self.path.removeLast(self.path.count)
+            self.path.append(Screen.settings)
+        }
     }
     
     func goBack() {
-        path.removeLast(path.count)
-        path.removeLast()
+        DispatchQueue.main.async {
+            self.path.removeLast()
+        }
     }
 }

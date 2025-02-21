@@ -45,19 +45,22 @@ class LoginFirebaseDataSourceImpl: LoginRemoteDataSource {
         }
     }
     
-    func fetchUserData(uid: String) async throws -> UserModel {
+    func fetchUserData(uid: String) async throws -> FirestoreUserModel {
         let document = try await firestore.collection("users").document(uid).getDocument()
         
         guard let data = document.data() else {
             throw NSError(domain: "FirestoreError", code: 404, userInfo: [NSLocalizedDescriptionKey: "Usuário não encontrado"])
         }
         
-        return UserModel(
-            id: uid,
-            name: data["name"] as? String ?? "Sem nome",
-            email: data["email"] as? String ?? "Sem email"
-        )
+        return FirestoreUserModel(
+            document: [ "User": (id: data["uid"] as? String ?? "",
+                                 name: data["name"] as? String ?? "",
+                                 email: data["email"] as? String ?? "",
+                                 address: data["address"] as? String ?? "")
+            ]
+        )!
     }
 }
+
 
 

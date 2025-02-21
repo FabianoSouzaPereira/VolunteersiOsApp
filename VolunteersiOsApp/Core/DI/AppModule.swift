@@ -24,6 +24,7 @@ class AppModule {
         HomeModule.register(in: container)
         LoginModule.register(in: container)
         SettingsModule.register(in: container)
+        UserModule.register(in: container)
     }
 
     func resolve<T>(_ type: T.Type) -> T {

@@ -11,6 +11,7 @@ struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
     @EnvironmentObject var router: Router
     @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var appConfig: AppConfig
     @StateObject private var retryController = DefaultRetryController()
     
     var body: some View {
@@ -68,7 +69,7 @@ struct LoginView: View {
                     .padding()
                 Button("Tentar novamente") {
                     Task {
-                        await (error.retryAction ?? router.goToLoginError)()
+                        await (error.retryAction ?? { @MainActor in router.goToLogin() })()
                     }
                 }
                 .buttonStyle(.bordered)
@@ -79,5 +80,10 @@ struct LoginView: View {
         }
         .padding()
         .navigationBarBackButtonHidden(true)
+        .onAppear {
+            Task {
+                print("Router in LoginView: \(router)")
+            }
+        }
     }
 }

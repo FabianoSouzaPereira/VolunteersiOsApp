@@ -854,7 +854,7 @@
 		9C60EC292D54E51E00080BA7 /* features */ = {
 			isa = PBXGroup;
 			children = (
-				9C6177332D6A1DAA00EC51F2 /* Common */,
+				9C6177392D6A1FCA00EC51F2 /* Common */,
 				9C60EC6A2D54F31200080BA7 /* Splash */,
 				9C60EBDE2D54E51E00080BA7 /* Home */,
 				9C60EC032D54E51E00080BA7 /* Login */,
@@ -897,13 +897,6 @@
 			path = DataSources;
 			sourceTree = "<group>";
 		};
-		9C6177332D6A1DAA00EC51F2 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		9C6177362D6A1E6F00EC51F2 /* Persistene */ = {
 			isa = PBXGroup;
 			children = (
@@ -923,6 +916,13 @@
 			children = (
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		9C6177392D6A1FCA00EC51F2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		9C6204722D53E50C0068BAAB /* Frameworks */ = {

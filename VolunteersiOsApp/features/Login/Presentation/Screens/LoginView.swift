@@ -74,6 +74,14 @@ struct LoginView: View {
                 }
                 .buttonStyle(.bordered)
                 .padding()
+                    
+                Button("Cancelar") {
+                    Task {
+                        viewModel.resetState
+                    }
+                }
+                .buttonStyle(.bordered)
+                .padding()
             }
             
             Spacer()

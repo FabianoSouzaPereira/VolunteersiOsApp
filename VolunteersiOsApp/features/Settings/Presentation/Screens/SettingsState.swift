@@ -33,6 +33,7 @@ struct SettingsError: Identifiable {
 enum SettingsAction {
     case refresh
     case logout
+    case goToHome
     case goToSettings
 }
 

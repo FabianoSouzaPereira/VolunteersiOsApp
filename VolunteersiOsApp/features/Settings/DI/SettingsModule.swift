@@ -22,7 +22,12 @@ class SettingsModule {
         }.inObjectScope(.container)
         
         container.register(SettingsViewModel.self) { resolver in
-            SettingsViewModel(useCase: resolver.resolve(SettingsRemoteUseCase.self)!)
+            let retryController = resolver.resolve((any RetryControllerProtocol).self)!
+            return SettingsViewModel(
+                useCase: resolver.resolve(SettingsRemoteUseCase.self)!,
+                router: resolver.resolve(Router.self)!,
+                retryController: retryController
+            )
         }.inObjectScope(.transient)
     }
 }

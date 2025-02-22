@@ -22,7 +22,12 @@ class HomeModule {
         }.inObjectScope(.container)
         
         container.register(HomeViewModel.self) { resolver in
-            HomeViewModel(homeUseCase: resolver.resolve(HomeUseCase.self)!, router: resolver.resolve(Router.self)!)
+            let retryController = resolver.resolve((any RetryControllerProtocol).self)!
+            return HomeViewModel(
+                homeUseCase: resolver.resolve(HomeUseCase.self)!,
+                router: resolver.resolve(Router.self)!,
+                retryController: retryController
+            )
         }.inObjectScope(.transient)
     }
 }

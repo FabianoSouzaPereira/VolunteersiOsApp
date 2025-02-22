@@ -21,6 +21,7 @@ class SettingsRemoteDataSourceImpl: SettingsRemoteDataSource {
 
     
     func getSettings() async throws -> [SettingsModel] {
+        return [SettingsModel(id: "1")]
         
         if appConfig.isUsingFirebase {
             return try await fetchSettingsFromFirestore()

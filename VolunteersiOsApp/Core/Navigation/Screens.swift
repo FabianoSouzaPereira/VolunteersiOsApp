@@ -13,4 +13,6 @@ enum Screen: Hashable {
     case login
     case settings
     case loginerror
+  //  case profile
+  //  case about
 }

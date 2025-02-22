@@ -26,17 +26,26 @@ class LoginViewModel: ObservableObject {
     }
         
     func login() async {
+        if(!retryController.isRetryEnabled){
+            return
+        }
+        
         updateState(.loading)
         
         do {
+            
             let user = try await loginUseCase.login(email: email, password: password)
             updateState(.success(data: user))
+            
+            retryController.resetRetryCount()
         } catch let error as RequestError {
+            retryController.incrementRetryCount()
             errorHandler.handleError(error)
             updateState(.error(LoginError(message: error.localizedDescription, retryAction: {
                 Task { await self.login() }
             })))
         } catch {
+            retryController.incrementRetryCount()
             let unknownError = GeneralRequestError.serverError
             errorHandler.handleError(unknownError)
             updateState(.error(LoginError(message: GeneralRequestError.unauthorized.message, retryAction: {
@@ -67,5 +76,17 @@ class LoginViewModel: ObservableObject {
             self.state = newState
             self.isLoading = self.state == .loading
         }
+    }
+    
+    func resetState() {
+        DispatchQueue.main.async {
+            self.state = .idle
+            self.clearInputFields()
+        }
+    }
+    
+    func clearInputFields() {
+        self.email = ""
+        self.password = ""
     }
 }

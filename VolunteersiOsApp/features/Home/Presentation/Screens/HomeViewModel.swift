@@ -10,15 +10,21 @@ import Combine
 
 final class HomeViewModel: ObservableObject {
     @Published var state: HomeState = .initial
+    @Published var isLoading = false
     private var router: Router
     private let homeUseCase: HomeUseCase
+    private let retryController: any RetryControllerProtocol
 
-    init(homeUseCase: HomeUseCase, router: Router) {
+    init(homeUseCase: HomeUseCase, router: Router, retryController: any RetryControllerProtocol) {
         self.homeUseCase = homeUseCase
         self.router = router
+        self.retryController = retryController
     }
 
     func loadHomeData() async {
+        if(!retryController.isRetryEnabled){
+            return
+        }
         updateState(.loading)
         
         do {
@@ -51,6 +57,23 @@ final class HomeViewModel: ObservableObject {
     private func updateState(_ newState: HomeState) {
         DispatchQueue.main.async {
             self.state = newState
+            print("\(self.state)")
         }
     }
+    
+    func isStateLoading() {
+        DispatchQueue.main.async {
+            self.isLoading = self.state == .loading
+            print("Loading... \(self.state == .loading)")
+        }
+    }
+    
+    func resetState() {
+        DispatchQueue.main.async {
+            self.state = .idle
+            self.clearInputFields()
+        }
+    }
+    
+    func clearInputFields() {}
 }

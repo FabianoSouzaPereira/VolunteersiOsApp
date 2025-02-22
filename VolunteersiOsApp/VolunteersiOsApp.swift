@@ -48,35 +48,32 @@ struct VolunteersiOsApp: App {
                     .environmentObject(diContainer.resolve(AuthManager.self))
                     .navigationDestination(for: Screen.self) { screen in
                         switch screen {
-                        case .splash:
-                                SplashScreenView() 
-                                    .environmentObject(router)
-                                    .environmentObject(appConfig)
-                                    .environmentObject(diContainer.resolve(AuthManager.self))
-                        case .home:
-                                HomeView(viewModel: homeViewModel, loginViewModel: loginViewModel)
-                                    .environmentObject(router)
-                                    .environmentObject(appConfig)
-                                    .environmentObject(diContainer.resolve(AuthManager.self))
-                        case .login:
-                            LoginView(viewModel: loginViewModel)
-                                    .environmentObject(router)
-                                    .environmentObject(appConfig)
-                                    .environmentObject(diContainer.resolve(AuthManager.self))
-                        case .settings:
-                            SettingsView(viewModel: settingsViewModel)
-                                    .environmentObject(router)
-                                    .environmentObject(appConfig)
-                                    .environmentObject(diContainer.resolve(AuthManager.self))
-                        case .loginerror:
-                            LoginErrorView(error: 
-                                LoginError.init(
-                                    message: "",
-                                    retryAction: {
-                                        ();
-                                    }
-                                )
-                            )
+                            case .splash:
+                                    SplashScreenView()
+                                        .environmentObject(router)
+                                        .environmentObject(appConfig)
+                                        .environmentObject(diContainer.resolve(AuthManager.self))
+                            case .home:
+                                    HomeView(viewModel: homeViewModel, loginViewModel: loginViewModel)
+                                        .environmentObject(router)
+                                        .environmentObject(appConfig)
+                                        .environmentObject(diContainer.resolve(AuthManager.self))
+                                        .navigationBarBackButtonHidden(true)
+                            case .login:
+                                LoginView(viewModel: loginViewModel)
+                                        .environmentObject(router)
+                                        .environmentObject(appConfig)
+                                        .environmentObject(diContainer.resolve(AuthManager.self))
+                            case .settings:
+                                SettingsView(viewModel: settingsViewModel)
+                                        .environmentObject(router)
+                                        .environmentObject(appConfig)
+                                        .environmentObject(diContainer.resolve(AuthManager.self))
+                            case .loginerror:
+                                LoginErrorView(error: LoginError.init(
+                                    message: "", 
+                                    retryAction: { (); }
+                                ))
                         }
                     }
             }

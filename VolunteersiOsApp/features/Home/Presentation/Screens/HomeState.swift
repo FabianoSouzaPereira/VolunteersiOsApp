@@ -28,6 +28,7 @@ enum HomeState {
     case loading
     case success(data: [HomeEntity])
     case error(HomeError)
+    case unknown
 }
 
 struct HomeError: Identifiable {
@@ -43,9 +44,23 @@ enum HomeAction {
     case goToSettings
 }
 
-
 extension HomeState {
     static var initial: HomeState {
-        return .loading
+        return  .loading
+    }
+}
+
+extension HomeState: Equatable {
+    static func == (lhs: HomeState, rhs: HomeState) -> Bool {
+        switch (lhs, rhs) {
+            case (.idle, .idle), (.loading, .loading):
+                return true
+            case (.success(let lhsData), .success(let rhsData)):
+                return lhsData.map { $0.id } == rhsData.map { $0.id }
+            case (.error(let lhsError), .error(let rhsError)):
+                return lhsError.message == rhsError.message
+            default:
+                return false
+        }
     }
 }

@@ -123,6 +123,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C4649712D6D2F5E006659EF /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		9C475C6A2D52DB1A00EAE3C5 /* VolunteersiOsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolunteersiOsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C475C6D2D52DB1A00EAE3C5 /* VolunteersiOsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteersiOsApp.swift; sourceTree = "<group>"; };
 		9C475C6F2D52DB1A00EAE3C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -249,6 +250,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C46496F2D6CB9C4006659EF /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		9C475C612D52DB1A00EAE3C5 = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +267,7 @@
 				9C475C872D52DB2000EAE3C5 /* VolunteersiOsAppUITests */,
 				9C475C6B2D52DB1A00EAE3C5 /* Products */,
 				9C6204722D53E50C0068BAAB /* Frameworks */,
+				9C74244C2D6E4A9800CA43C1 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -358,17 +367,10 @@
 			children = (
 				9CD4A4FD2D628D5C007CCC07 /* Data */,
 				9CD4A5002D628DAD007CCC07 /* Domain */,
-				9C5CB9B92D6611FA00EB3609 /* Presentation */,
+				9C61773D2D6A27A400EC51F2 /* Presentation */,
 				9C5CB9BA2D66127300EB3609 /* DI */,
 			);
 			path = User;
-			sourceTree = "<group>";
-		};
-		9C5CB9B92D6611FA00EB3609 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presentation;
 			sourceTree = "<group>";
 		};
 		9C5CB9BA2D66127300EB3609 /* DI */ = {
@@ -377,48 +379,6 @@
 				9C5CB9C12D66137900EB3609 /* UserModule.swift */,
 			);
 			path = DI;
-			sourceTree = "<group>";
-		};
-		9C5CB9BB2D66129700EB3609 /* DataSources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataSources;
-			sourceTree = "<group>";
-		};
-		9C5CB9BC2D6612A700EB3609 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		9C5CB9BD2D6612C300EB3609 /* UseCases */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UseCases;
-			sourceTree = "<group>";
-		};
-		9C5CB9BE2D6612F700EB3609 /* DataSources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataSources;
-			sourceTree = "<group>";
-		};
-		9C5CB9BF2D66130200EB3609 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		9C5CB9C02D66132800EB3609 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Persistence;
 			sourceTree = "<group>";
 		};
 		9C5CB9C32D66771200EB3609 /* Firebase */ = {
@@ -498,13 +458,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		9C60EBBD2D54E51E00080BA7 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Persistence;
-			sourceTree = "<group>";
-		};
 		9C60EBBE2D54E51E00080BA7 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,8 +470,8 @@
 			isa = PBXGroup;
 			children = (
 				9C60EBB92D54E51E00080BA7 /* DataSources */,
+				9C6177462D6A28C100EC51F2 /* Persistence */,
 				9C60EBBC2D54E51E00080BA7 /* Models */,
-				9C60EBBD2D54E51E00080BA7 /* Persistence */,
 				9C60EBBE2D54E51E00080BA7 /* Repositories */,
 			);
 			path = Data;
@@ -568,13 +521,6 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		9C60EBC72D54E51E00080BA7 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		9C60EBDA2D54E51E00080BA7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,19 +531,12 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		9C60EBDB2D54E51E00080BA7 /* Themes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Themes;
-			sourceTree = "<group>";
-		};
 		9C60EBDD2D54E51E00080BA7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				9C60EBC72D54E51E00080BA7 /* Components */,
+				9C6177442D6A287C00EC51F2 /* Components */,
 				9C60EBDA2D54E51E00080BA7 /* Screens */,
-				9C60EBDB2D54E51E00080BA7 /* Themes */,
+				9C6177452D6A288B00EC51F2 /* Theme */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -700,8 +639,8 @@
 		9C60EC022D54E51E00080BA7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				9C6177372D6A1EC700EC51F2 /* Components */,
 				9C60EC262D54E51E00080BA7 /* AuthManager.swift */,
+				9C6177372D6A1EC700EC51F2 /* Components */,
 				9C60EBFF2D54E51E00080BA7 /* Screens */,
 				9C6177382D6A1ED500EC51F2 /* Theme */,
 			);
@@ -735,13 +674,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		9C60EC082D54E51E00080BA7 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Persistence;
-			sourceTree = "<group>";
-		};
 		9C60EC092D54E51E00080BA7 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -754,8 +686,8 @@
 			isa = PBXGroup;
 			children = (
 				9C60EC042D54E51E00080BA7 /* DataSources */,
+				9C46496F2D6CB9C4006659EF /* Persistence */,
 				9C60EC072D54E51E00080BA7 /* Models */,
-				9C60EC082D54E51E00080BA7 /* Persistence */,
 				9C60EC092D54E51E00080BA7 /* Repositories */,
 			);
 			path = Data;
@@ -797,13 +729,6 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		9C60EC112D54E51E00080BA7 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		9C60EC162D54E51E00080BA7 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -823,19 +748,12 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		9C60EC252D54E51E00080BA7 /* Themes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Themes;
-			sourceTree = "<group>";
-		};
 		9C60EC272D54E51E00080BA7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				9C60EC112D54E51E00080BA7 /* Components */,
+				9C61773A2D6A276F00EC51F2 /* Components */,
 				9C60EC242D54E51E00080BA7 /* Screens */,
-				9C60EC252D54E51E00080BA7 /* Themes */,
+				9C61773B2D6A277B00EC51F2 /* Theme */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -925,6 +843,90 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		9C61773A2D6A276F00EC51F2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9C61773B2D6A277B00EC51F2 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		9C61773D2D6A27A400EC51F2 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9C61773E2D6A27CE00EC51F2 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		9C61773F2D6A27DB00EC51F2 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		9C6177402D6A27F100EC51F2 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		9C6177412D6A281600EC51F2 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		9C6177422D6A282300EC51F2 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		9C6177432D6A283000EC51F2 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		9C6177442D6A287C00EC51F2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9C6177452D6A288B00EC51F2 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		9C6177462D6A28C100EC51F2 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		9C6204722D53E50C0068BAAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -932,13 +934,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9C74244C2D6E4A9800CA43C1 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				9C4649712D6D2F5E006659EF /* ViewState.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		9CD4A4FD2D628D5C007CCC07 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9C5CB9BE2D6612F700EB3609 /* DataSources */,
+				9C6177412D6A281600EC51F2 /* DataSources */,
+				9C6177422D6A282300EC51F2 /* Persistence */,
 				9CD4A4FE2D628D7E007CCC07 /* Models */,
-				9C5CB9C02D66132800EB3609 /* Persistence */,
-				9C5CB9BF2D66130200EB3609 /* Repositories */,
+				9C6177432D6A283000EC51F2 /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -965,9 +975,9 @@
 			isa = PBXGroup;
 			children = (
 				9CD4A4FF2D628D96007CCC07 /* Entity */,
-				9C5CB9BB2D66129700EB3609 /* DataSources */,
-				9C5CB9BC2D6612A700EB3609 /* Repositories */,
-				9C5CB9BD2D6612C300EB3609 /* UseCases */,
+				9C61773E2D6A27CE00EC51F2 /* DataSources */,
+				9C61773F2D6A27DB00EC51F2 /* Repositories */,
+				9C6177402D6A27F100EC51F2 /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";

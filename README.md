@@ -28,9 +28,18 @@ A injeção de dependências pode ser feita com **Swinjection** frameworks ou ma
     │   │   ├── Screen.swift 
     │   │  
     │   ├── Helpers
+    │   │   ├── Exceptions
+    │   │   │   ├── RequestError.swift
+    │   │   │   ├── GeneralRequestError.swift
+    │   │   │   ├── NetworkError.swift
+    │   │   │   ├── UserError.swift
+    │   │   │   ├── TransactionError.swift
+    │   │   │   ├── ErrrorHandle.swift
+    │   │   │
     │   │   ├── AppConfig.swift 
     │   │   ├── DefaultRetryController.swift 
     │   │   ├── RetryControllerProtocol.swift 
+    │   │   ├── TokenManager.swift 
     │   │   
     │   ├── Extensions            // Extensões auxiliares para reutilização de código
     │   ├── Utils                 // Utilitários e helpers globais
@@ -47,13 +56,16 @@ A injeção de dependências pode ser feita com **Swinjection** frameworks ou ma
     │   ├── Login
     │   │   ├── Data
     │   │   │   ├── Datasources
-    │   │   │   │   ├── DatasourceImpl.swift     (implementation)
+    │   │   │   │   ├── LoginRemoteDatasourceImpl.swift     (implementation)
+    │   │   │   │   ├── LoginFirebaseDatasourceImpl.swift     (implementation)
+    │   │   │   │
     │   │   │   ├── Persistence
     │   │   │   ├── Repositories
     │   │   │       ├── LoginReposiotyImpl.swift (implementation)
     │   │   │
     │   │   ├── Models
     │   │   │   ├── LoginModel.swift  (implementation)
+    │   │   │   ├── LoginFirebaseModel.swift  (implementation)
     │   │   │
     │   │   ├── Repositories
     │   │   │   ├── LoginReposiotyImpl.swift  (implementation)
@@ -63,14 +75,15 @@ A injeção de dependências pode ser feita com **Swinjection** frameworks ou ma
     │   │   │   │    ├── LoginEntities   (protocol)
     │   │   │   │
     │   │   │   ├── DataSources
-    │   │   │   │   ├── LoginDatasource.swift (protocol)
+    │   │   │   │   ├── LoginRemoteDatasource.swift (protocol)
+    │   │   │   │   ├── LoginFirebaseDatasource.swift (protocol)
     │   │   │   │
     │   │   │   ├── LoginRepositories   
-    │   │   │   │   ├── LoginReposioty.swift  (protocol)
+    │   │   │   │   ├── LoginRemoteReposioty.swift  (protocol)
     │   │   │   │
     │   │   │   ├── UseCases
-    │   │   │       ├── LoginUseCase     (protocol)
-    │   │   │       ├── LoginUseCaseImpl (implementation)
+    │   │   │       ├── LoginRemoteUseCase     (protocol)
+    │   │   │       ├── LoginRemoteUseCaseImpl (implementation)
     │   │   │
     │   │   ├── Presentation
     │   │   │   ├── AuthManager.swift

@@ -2,7 +2,16 @@
 ## **Diferenças e Ajustes para Swift**
 
 [![Swift Version](https://img.shields.io/badge/swift-5.9-orange)](https://swift.org) [![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT) [![Downloads](https://img.shields.io/github/downloads/usuario/repositorio/total)](https://github.com/usuario/repositorio/releases)
-![Swinject Version](https://img.shields.io/badge/Swinject-2.9.1-blue) ![Swinject Version](https://img.shields.io/badge/Alamofire-5.10.2-blue) ![Swinject Version](https://img.shields.io/badge/Firebaser-11.8.1-blue)
+![Swinject Version](https://img.shields.io/badge/Swinject-2.9.1-blue) ![Alamofire Version](https://img.shields.io/badge/Alamofire-5.10.2-blue) ![Firebase Version](https://img.shields.io/badge/Firebase-11.8.1-blue)
+
+O **SwiftUI** utiliza **DAO** comumente através do *CoreData*, então a camada de *Persistence* foi nomeada para refletir essa abordagem.
+
+- **Use Cases** são implementados seguindo os padrões da Clean Architecture.
+- **Repositories** separam as interfaces de domínio de suas implementações na camada de dados.
+- A camada de **UI** foi segmentada por **Screens** e **Components**, facilitando a reutilização e a modularidade no SwiftUI.
+- A **injeção de dependências** é feita via **Swinject** ou manualmente com `@StateObject`, `@ObservedObject` e `@EnvironmentObject`.
+
+
 
 
 
@@ -106,15 +115,26 @@ A injeção de dependências pode ser feita com **Swinjection** frameworks ou ma
 
 ```
 
+---
+
 ## **Entities**
 
-### **Codable e Protocolos Genéricos**
+### **Codable e Protocolos Genéricos com `associatedtype`**
 
-O Encodable e Decodable (ou seja, Codable) não funcionam diretamente com protocolos com any, já que o compilador do Swift não consegue inferir automaticamente como serializar e desserializar essas propriedades que usam any.
+No Swift, `Codable` não funciona diretamente em protocolos que envolvem `any` ou tipos existenciais, pois o compilador não consegue inferir como serializar essas propriedades.
 
-#### **Tornar o protocolo UserEntity genérico**
+Para manter a **independência da camada de domínio** e garantir suporte a múltiplas fontes de dados (ex: Firebase, REST, Local), adotamos uma abordagem baseada em protocolos com `associatedtype`, respeitando os princípios da Clean Architecture:
 
-A abordagem utilizada foi transformar UserEntity em um protocolo genérico, removendo any e garantindo que UserModel use tipos específicos para suas propriedades.
+### 🔹 Por que usar essa abordagem?
+
+- ✅ Para manter a **camada de domínio livre de tipos concretos**
+- ✅ Para permitir **múltiplas implementações intercambiáveis** (ex: Firebase, REST, Local)
+- ✅ Para facilitar testes com **mocks e stubs**
+- ✅ Para evitar que `Codable`, `Foundation` e outras dependências vazem para o domínio
+
+---
+
+### **Exemplo de protocolo de entidade com `associatedtype`**
 
 ```swift
 protocol UserEntity {
@@ -137,7 +157,7 @@ protocol UserEntity {
 }
 ```
 
-### **Implementação Segura**
+### **Implementação concreta e segura com Codable**
 
 Foi criada uma implementação mais segura, permitindo que o Swift gere os métodos de Codable corretamente.
 
@@ -156,26 +176,39 @@ struct UserModel: UserEntity, Codable {
     var createdAt: Date
 }
 ```
+O Codable é aplicado somente nos modelos concretos, permitindo serialização sem comprometer o domínio.
 
-### **Métodos de Serialização**
+### **Métodos de Serialização e Desserialização Segura**
 
 ```swift
-extension UserModel {
-    static func fromJson(_ jsonData: Data) throws -> UserModel {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        return try decoder.decode(UserModel.self, from: jsonData)
-    }
+static func fromJson(_ jsonData: Data) -> Result<UserModel, Error> {
+    let decoder = JSONDecoder()
+    decoder.dateDecodingStrategy = .iso8601
 
-    func toJson() throws -> Data {
-        let encoder = JSONEncoder()
-        encoder.dateEncodingStrategy = .iso8601
-        return try encoder.encode(self)
+    do {
+        let decoded = try decoder.decode(UserModel.self, from: jsonData)
+        return .success(decoded)
+    } catch {
+        return .failure(error)
     }
 }
+
+func toJson() -> Result<Data, Error> {
+    let encoder = JSONEncoder()
+    encoder.dateEncodingStrategy = .iso8601
+
+    do {
+        let jsonData = try encoder.encode(self)
+        return .success(jsonData)
+    } catch {
+        return .failure(error)
+    }
+}
+
+
 ```
 
-### **Tratamento de Erros**
+### **Versão com Result para tratamento de erro**
 
 ```swift
 static func fromJson(_ jsonData: Data) -> Result<UserModel, Error> {
@@ -205,5 +238,18 @@ func toJson() -> Result<Data, Error> {
 }
 ```
 
-Essa abordagem melhora a robustez e evita crashes inesperados no app.
+Esta abordagem proporciona:
+
+✅ Alta testabilidade (mock via protocolo)
+
+✅ Baixo acoplamento com Codable e Foundation
+
+✅ Suporte a múltiplas fontes de dados
+
+✅ Facilidade para aplicar princípios de Clean Architecture
+
+⚠️ Cuidado apenas com o uso de associatedtype, pois ele impede o uso direto de tipos existenciais (como let x: UserEntity).
+
+Use essa arquitetura quando quiser isolar o domínio, trabalhar com mocks, múltiplas implementações ou garantir evolução futura da app com mínima fricção.
+
 

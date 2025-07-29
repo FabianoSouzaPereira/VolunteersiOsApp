@@ -7,23 +7,10 @@
 
 import Foundation
 
-struct FirestoreUserPhonesModel: FirestoreUserPhonesEntity {
+struct FirestoreUserPhonesModel: FirestoreUserPhonesEntity, Codable {
     var mobile: String
     var home: String?
     var work: String?
-    
-    init(document: [String: Any]) {
-        self.mobile = document["mobile"] as? String ?? ""
-        self.home = document["home"] as? String ?? ""
-        self.work = document["work"] as? String ?? ""
-    }
-    
-    func toDictionary() -> [String: Any] {
-        return [
-            "mobile": mobile,
-            "home": home!,
-            "work": work!,
-        ]
-    }
+    var hasErrors: Bool
 }
 

@@ -66,13 +66,13 @@ class LoginFirebaseDataSourceImpl: LoginFirebaseDataSource {
             throw NSError(domain: "FirestoreError", code: 404, userInfo: [NSLocalizedDescriptionKey: "Usuário não encontrado"])
         }
         
-        return FirestoreUserModel(
-            document: [ "User": (id: data["uid"] as? String ?? "",
+        return try FirestoreUserModel(
+            from: [ "User": (id: data["uid"] as? String ?? "",
                                  name: data["name"] as? String ?? "",
                                  email: data["email"] as? String ?? "",
                                  address: data["address"] as? String ?? "")
-            ]
-        )!
+            ] as! Decoder
+        )
     }
 }
 

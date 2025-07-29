@@ -80,6 +80,8 @@
 		9C60EC7B2D551C8400080BA7 /*  HomeRemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60EC7A2D551C8400080BA7 /*  HomeRemoteDataSourceImpl.swift */; };
 		9C6204742D53E50C0068BAAB /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9C6204732D53E50C0068BAAB /* Swinject */; };
 		9C6204762D53E5120068BAAB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9C6204752D53E5120068BAAB /* Alamofire */; };
+		9C8245A82D6F834A0023D602 /* ServerAddressEntit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8245A72D6F834A0023D602 /* ServerAddressEntit.swift */; };
+		9C8245AC2D6F84090023D602 /* ServerAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8245AB2D6F84090023D602 /* ServerAddressModel.swift */; };
 		9C90D33C2D60DE4E00903BE1 /* LoginErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90D33B2D60DE4E00903BE1 /* LoginErrorView.swift */; };
 		9C90D33E2D60E2B600903BE1 /* DefaultRetryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90D33D2D60E2B600903BE1 /* DefaultRetryController.swift */; };
 		9C90D3402D60E3AC00903BE1 /* RetryControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C90D33F2D60E3AC00903BE1 /* RetryControllerProtocol.swift */; };
@@ -194,6 +196,8 @@
 		9C60EC762D551A5800080BA7 /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
 		9C60EC782D551A6D00080BA7 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		9C60EC7A2D551C8400080BA7 /*  HomeRemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " HomeRemoteDataSourceImpl.swift"; sourceTree = "<group>"; };
+		9C8245A72D6F834A0023D602 /* ServerAddressEntit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAddressEntit.swift; sourceTree = "<group>"; };
+		9C8245AB2D6F84090023D602 /* ServerAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAddressModel.swift; sourceTree = "<group>"; };
 		9C90D33B2D60DE4E00903BE1 /* LoginErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrorView.swift; sourceTree = "<group>"; };
 		9C90D33D2D60E2B600903BE1 /* DefaultRetryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRetryController.swift; sourceTree = "<group>"; };
 		9C90D33F2D60E3AC00903BE1 /* RetryControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryControllerProtocol.swift; sourceTree = "<group>"; };
@@ -670,6 +674,7 @@
 			isa = PBXGroup;
 			children = (
 				9C5AF5702D5E264600468BEA /* SettingsModel.swift */,
+				9C8245AB2D6F84090023D602 /* ServerAddressModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -697,6 +702,7 @@
 			isa = PBXGroup;
 			children = (
 				9C5AF56E2D5E260D00468BEA /* SettingsEntity.swift */,
+				9C8245A72D6F834A0023D602 /* ServerAddressEntit.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1142,6 +1148,7 @@
 				9C60EC692D54F20300080BA7 /* SettingsRemoteUseCase.swift in Sources */,
 				9C5CB9D62D6679CE00EB3609 /* FirestoreUserNotificationSettingsEntity.swift in Sources */,
 				9C60EC302D54E51E00080BA7 /* HomeView.swift in Sources */,
+				9C8245A82D6F834A0023D602 /* ServerAddressEntit.swift in Sources */,
 				9C5CB9CE2D6678A100EB3609 /* FirestoreUserEntity.swift in Sources */,
 				9C60EC572D54E51E00080BA7 /* SettingsViewModel.swift in Sources */,
 				9C5CB9C72D66777000EB3609 /* FirestoreUserPhonesModel.swift in Sources */,
@@ -1177,6 +1184,7 @@
 				9C5CD1192D68F528005BCE4E /* ErrorHandler.swift in Sources */,
 				9CD4A5082D62912B007CCC07 /* UserSocialMediaEntity.swift in Sources */,
 				9C5CD1112D68F4E1005BCE4E /* GeneralRequestError.swift in Sources */,
+				9C8245AC2D6F84090023D602 /* ServerAddressModel.swift in Sources */,
 				9C5AF5712D5E264600468BEA /* SettingsModel.swift in Sources */,
 				9CD4A50C2D629298007CCC07 /* UserAddressModel.swift in Sources */,
 				9CD4A50E2D6292AD007CCC07 /* UserPhonesModel.swift in Sources */,

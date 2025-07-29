@@ -21,7 +21,24 @@ class SettingsRemoteDataSourceImpl: SettingsRemoteDataSource {
 
     
     func getSettings() async throws -> [SettingsModel] {
-        return [SettingsModel(id: "1")]
+        return [
+            SettingsModel(
+                id: 1,
+                maintenanceMode: false,
+                defaultLanguage: "en",
+                privacyPolicyURL: "https://example.com/privacy",
+                termsOfServiceURL: "https://example.com/terms",
+                appVersion: "1.0.0",
+                featureToggle: true,
+                serverAddress: ServerAddressModel(host: "localhost", port: 8080),
+                supportContactEmail: "support@example.com",
+                defaultTimezone: "UTC",
+                maxUploadSize: 10485760,
+                analyticsEnabled: true,
+                chatEnabled: true,
+                darkMode: false
+            )
+        ]
         
         if appConfig.isUsingFirebase {
             return try await fetchSettingsFromFirestore()

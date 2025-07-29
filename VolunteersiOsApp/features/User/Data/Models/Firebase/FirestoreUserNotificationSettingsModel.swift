@@ -7,17 +7,6 @@
 
 import Foundation
 
-struct FirestoreUserNotificationSettingsModel : FirestoreUserNotificationSettingsEntity {
+struct FirestoreUserNotificationSettingsModel : FirestoreUserNotificationSettingsEntity, Codable {
     var notificationMessage: String
-    
-    init?(document: [String: Any]) {
-        guard let notificationMessage = document["notificationMessage"] as? String else { return nil }
-        self.notificationMessage = notificationMessage
-    }
-    
-    func toDictionary() -> [String: Any] {
-        return [
-            "notificationMessage": notificationMessage
-        ]
-    }
 }

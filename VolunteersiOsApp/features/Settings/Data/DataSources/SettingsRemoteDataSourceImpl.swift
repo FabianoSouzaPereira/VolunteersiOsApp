@@ -21,6 +21,7 @@ class SettingsRemoteDataSourceImpl: SettingsRemoteDataSource {
 
     
     func getSettings() async throws -> [SettingsModel] {
+            // TODO: real implamentation not created yet
         return [
             SettingsModel(
                 id: 1,
